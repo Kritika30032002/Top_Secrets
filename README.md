@@ -65,7 +65,12 @@ Now you're ready to run the app locally and sign into your local instance!
 To Start the development server run
 
 ```sh
-npm app.js
+node app.js
+```
+
+Open chrome and run
+```sh
+http://localhost:3000/
 ```
 
 <div  align="center"><img  height="200px"  src="https://user-images.githubusercontent.com/77617189/192947926-37284128-9965-46a4-b29b-c75e47b2f76b.svg"  /></div>
