@@ -114,6 +114,10 @@ If you found a technical bug on Dummygram or have ideas for features we should i
 - Want to fix a bug or implement an agreed-upon feature? Great, jump to the [local setup instructions](#first-time-setup)!
 
 
+# Demo Video of Website
+[screen-capture.webm](https://user-images.githubusercontent.com/83400697/204582783-e3def69a-61f6-4421-972f-34134ec4528b.webm)
+
+
 ## Thanks to all Contributors 💪
 
 Thanks a lot for spending your time helping Top_Secrets to grow. Thanks a lot! Keep rocking 🍻
