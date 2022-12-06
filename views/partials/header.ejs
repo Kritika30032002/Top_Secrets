@@ -53,5 +53,37 @@
         </a>
       </form>
     </nav>
+    <i class="scroll-up" id="scroll-up"
+    style="position: fixed;
+    right: 0.5%;
+    bottom: 3%;
+    cursor: pointer;
+    
+    "
+    
+    ><img src="/public/Gifs/Arrow_Up.gif" class="socicon up-arrow"
+
+      alt="scroll-up" 
+      style="
+      width: 3rem;
+    height: 3rem;
+      
+      "
+      
+      ></i>
+<script>
+  const scrollUp = document.querySelector("#scroll-up");
+
+scrollUp.addEventListener("click", () =>{
+
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth"
+    })
+})
+
+</script>
+
   </body>
 </html>
