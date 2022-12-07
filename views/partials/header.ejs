@@ -17,9 +17,6 @@
     />
     <link rel="stylesheet" href="css/bootstrap-social.css" />
     <link rel="stylesheet" href="css/styles.css" />
-
-    
-
   </head>
 
   <body>
@@ -55,42 +52,40 @@
           Login
         </a>
       </form>
-
-
-      
     </nav>
-    <button onclick="topFunction()" id="myBtn" class="Button" title="Scroll Up"
-    style=" position: fixed;
-    bottom: 20px;
-    right: 30px;
-    z-index: 99;
-    border: none;
-    outline: none;
-    background-color: #343a40;
-    color: white;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 18px;
-    animation: glowing 20s linear infinite;
     
-            
+    <i class="scroll-up" id="scroll-up"
+    style="position: fixed;
+    right: 0.5%;
+    bottom: 3%;
+    z-index: 1;
+
+    cursor: pointer;
+    
     "
     
-    
-    
-    
-    
-    
-    >Scroll Up</button>
+    ><img src="/public/Images/img_71311.png" class="socicon up-arrow"
+
+      alt="scroll-up" 
+      style="
+      width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+      
+      "
+      
+      ></i>
 <script>
- let mybutton = document.getElementById("myBtn");
+  const scrollUp = document.querySelector("#scroll-up");
 
- function topFunction(){
-   document.documentElement.scrollTop= 0;
+scrollUp.addEventListener("click", () =>{
 
-
- }
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth"
+    })
+})
 
 </script>
 
