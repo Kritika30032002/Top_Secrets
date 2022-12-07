@@ -4,7 +4,7 @@
     
     
    
-<b> <a href="https://discord.gg/gtyb5UFX" target="_blank">
+<b> <a href="https://discord.gg/VCTyVXRf" target="_blank">
 <font size="3200"> Be a part of our Community on Discord 🚀</font>
 </a>
 </b>
