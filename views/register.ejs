@@ -1,12 +1,86 @@
 <%- include('partials/header') %>
-<div class="container mt-5" style="margin-bottom: 197px">
+<section class="login-block">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-sm-12">
+            <!---->
+              <form class="md-float-material form-material" action="/register" method="POST">
+                  <div class="auth-box card">
+                      <div class="card-block">
+                          <div class="row">
+                              <div class="col-md-12">
+                                   <h2 class="text-center heading" style="font-family: cursive;">Secrets</h2><i class="fas fa-key fa-1.5x" style="color: white"></i>
+                                  <h3 class="text-center heading" style="font-family:'Times New Roman', Times, serif;">Welcome to Secrets </h3>
+                                  <h5 class="text-center heading" style="font-family:'Times New Roman', Times, serif;" > Register to Keep Your Secrets safe</h5>
+                              </div>
+                          </div>
+                         
+                          <div class="form-group form-primary">
+                              <input type="text" class="form-control" name="email" value="" placeholder="Email" id="email">
+                             
+                          </div>
+
+                          <div class="form-group form-primary">
+                             <input type="password" class="form-control" name="password" placeholder="Password" value="" id="password">
+                            
+                          </div>
+
+                          
+                          </div>
+
+
+                          <div class="row">
+                              <div class="col-md-12">
+
+                                  <input type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20" name="submit" value="Register">
+                                
+                              </div>
+                          </div>
+
+                          <div class="or-container"><div class="line-separator"></div> <div class="or-label">or</div><div class="line-separator"></div></div>
+
+
+                          <div class="row">
+                              <div class="col-md-12">
+                                <a class="btn btn-lg btn-google btn-block text-uppercase btn-outline" href="/auth/google"><img src="https://img.icons8.com/color/16/000000/google-logo.png"> Login Using Google</a>
+
+                              </div>
+                          </div>
+                          <br>
+
+                          <p class="text-inverse text-center">Already  have an account? <a href="/login" role="button">Login</a></p>
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--original code
+  
+  <div class="container mt-5" style="margin-bottom: 197px">
   <h1>Register</h1>
 
   <div class="row">
     <div class="col-sm-8">
       <div class="card">
         <div class="card-body">
-          <!-- Makes POST request to /register route -->
+        Makes POST request to /register route 
           <form action="/register" method="POST">
             <div class="form-group">
               <label for="email">Email</label>
@@ -37,6 +111,5 @@
       </div>
     </div>
   </div>
-</div>
-
+</div>-->
 <%- include('partials/footer') %>
