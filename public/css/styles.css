@@ -14,3 +14,136 @@ body {
   color: #fff;
   background-color: #000;
 }
+body {
+  margin:0;
+  padding:0;
+  background:linear-gradient(84deg, transparent, black);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: "Open Sans", sans-serif;
+}
+
+
+
+body {
+  background-color: #f2f7fb
+}
+
+.login-block {
+  margin: 30px auto;
+  min-height: 93.6vh
+}
+
+.login-block .auth-box {
+  margin: 20px auto 0;
+  max-width: 450px !important;
+  
+}
+
+.card {
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 5px 0 rgba(43, 43, 43, .1), 0 11px 6px -7px rgba(43, 43, 43, .1);
+  box-shadow: 0 0 5px 0 rgba(43, 43, 43, .1), 0 11px 6px -7px rgba(43, 43, 43, .1);
+  border: none;
+  margin-bottom: 30px;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+      background-color: #fff;
+}
+
+.card .card-block {
+  padding: 1.25rem
+}
+
+.f-80 {
+  font-size: 80px
+}
+
+.form-group {
+  margin-bottom: 1.25em
+}
+
+.form-material .form-control {
+  display: inline-block;
+  height: 43px;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 9px;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-bottom: 1px solid #ccc
+}
+
+.btn-md {
+  padding: 10px 16px;
+  font-size: 15px;
+  line-height: 23px
+}
+
+.btn-primary {
+  background-color: #4099ff;
+  border-color: #4099ff;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: all ease-in .3s;
+  transition: all ease-in .3s
+}
+
+.btn {
+  border-radius: 2px;
+  text-transform: capitalize;
+  font-size: 15px;
+  padding: 10px 19px;
+  cursor: pointer
+}
+
+.m-b-20 {
+  margin-bottom: 20px
+}
+
+.btn-md {
+  padding: 10px 16px;
+  font-size: 15px;
+  line-height: 23px
+}
+
+.heading{
+
+font-size: 21px;
+
+}
+
+
+
+
+.btn-google {
+      color: #545454;
+  background-color: #ffffff;
+  box-shadow: 0 1px 2px 1px #ddd;
+}
+
+
+.or-container {
+  align-items: center;
+  color: #ccc;
+  display: flex;
+  margin: 25px 0;
+}
+
+.line-separator {
+  background-color: #ccc;
+  flex-grow: 5;
+  height: 1px;
+}
+
+.or-label {
+  flex-grow: 1;
+  margin: 0 5px;
+  text-align: center;
+}
