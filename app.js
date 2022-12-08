@@ -43,7 +43,7 @@ userSchema.plugin(findOrCreate);
 
 const User = new mongoose.model("User",userSchema);
 
-// passport.use(User.createStrategy());
+passport.use(User.createStrategy());
 
 passport.serializeUser(function(user,done){
   done(null,user.id);
@@ -73,15 +73,15 @@ app.get("/",function(req,res){
   res.render("home");
 });
 
-// app.get("/auth/google",
-//   passport.authenticate('google', { scope: ["profile"] }));
-//
-// app.get("/auth/google/secrets",
-//   passport.authenticate('google', { failureRedirect: "/login" }),
-//   function(req, res) {
-//     // Successful authentication, redirect to secrets.
-//     res.redirect("/secrets");
-//   });
+app.get("/auth/google",
+  passport.authenticate('google', { scope: ["profile"] }));
+
+app.get("/auth/google/secrets",
+  passport.authenticate('google', { failureRedirect: "/login" }),
+  function(req, res) {
+    // Successful authentication, redirect to secrets.
+    res.redirect("/secrets");
+  });
 
 app.get("/login",function(req,res){
   res.render("login");
@@ -152,9 +152,9 @@ app.post("/register",function(req,res){
          res.redirect("/register");
        }
        else{
-         // passport.authenticate("local")(req,res,function(){
+          passport.authenticate("local")(req,res,function(){
            res.redirect("/secrets");
-         // });
+         });
        }
      });
 
