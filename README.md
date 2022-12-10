@@ -109,7 +109,7 @@ That being said, this codebase isn't your typical open source project because it
 
 ### Reporting a bug or discussing a feature idea
 
-If you found a technical bug on Dummygram or have ideas for features we should implement, the issue tracker is the best place to share your ideas.  ([click here to open a new issue](https://github.com/Kritika30032002/Top_Secrets/issues))
+If you found a technical bug on the website or have ideas for features we should implement, the issue tracker is the best place to share your ideas.  ([click here to open a new issue](https://github.com/Kritika30032002/Top_Secrets/issues))
 
 ### Fixing a bug or implementing a new feature
 
