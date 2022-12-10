@@ -1,11 +1,10 @@
-
 body {
-  background-color: #E8ECEF;
+  background-color: #e8ecef;
 }
 
 .centered {
-    padding-top: 200px;
-    text-align: center;
+  padding-top: 200px;
+  text-align: center;
 }
 
 .secret-text {
@@ -13,4 +12,32 @@ body {
   font-size: 2rem;
   color: #fff;
   background-color: #000;
+}
+.container-about {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 197px;
+  margin-top: 197px;
+  /* flex-direction: row; */
+  justify-content: center;
+  align-items: center;
+}
+.container-image {
+  min-width: 300px;
+  max-width: 600px;
+}
+@media screen and (max-width: 992px) {
+  .register {
+    display: none;
+  }
+  .login {
+    display: none;
+  }
+  .container-about {
+    flex-direction: column;
+  }
+  .container-image {
+    margin-top: 80px;
+    max-width: 600px;
+  }
 }
