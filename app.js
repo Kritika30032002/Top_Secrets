@@ -73,6 +73,18 @@ passport.deserializeUser(function (id, done) {
 //   }
 // ));
 
+// passport.use(new FacebookStrategy({
+//   clientID: FACEBOOK_APP_ID, // Include your App ID
+//   clientSecret: FACEBOOK_APP_SECRET, // Include you App Secret
+//   callbackURL: "http://localhost:3000/auth/facebook/secrets"
+// },
+// function(accessToken, refreshToken, profile, cb) {
+//   User.findOrCreate({ facebookId: profile.id }, function (err, user) {
+//     return cb(err, user);
+//   });
+// }
+// ));
+
 app.get("/", function (req, res) {
   res.render("home");
 });
