@@ -68,6 +68,11 @@ To Start the development server run
 node app.js
 ```
 
+Or if you have nodemon installed on your system , run
+```sh
+nodemon app.js
+```
+
 Open chrome and run
 ```sh
 http://localhost:3000/
@@ -86,7 +91,8 @@ Here's a quick run down on how to get started with open source, first of all let
 - Repository: A project on GitHub is called a repository
 - Pull Request: This is a fix for an issue proposed to be done in a project, this consists of you editing a file in the project.
 - Issue: An issue is a change that should be done in a project, can be a bug, a new feature or a suggestion to a project
-- Branch: A branch is a new workspace derived from the default workspace(main or master), it allows you to work on something without affecting the original code
+- Branch: A branch is a new workspace derived from the default workspace(main or master), it allows you to work on something without affecting the original code.
+- Star: When you star a repositiory, it gets saved at your profile and you can easily re-visit it later.
 
 Now you know some basic terms, let's get into how to get started with some resources to let you understand open source better:
 
@@ -126,6 +132,7 @@ If you found a technical bug on the website or have ideas for features we should
 ## Thanks to all Contributors 💪
 
 Thanks a lot for spending your time helping Top_Secrets to grow. Thanks a lot! Keep rocking 🍻
+Also Give it a Star 🌟, If you loved contributing to the project.
 
   
 ## License
