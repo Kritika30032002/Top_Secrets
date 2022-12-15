@@ -1,7 +1,11 @@
 <%- include('partials/header') %>
 <div class="container mt-5" style="margin-bottom: 197px">
   <h1>Register</h1>
-
+  <ul>
+    <% if(typeof error !='undefined' ) { %> <% error.forEach(err=> { %>
+    <li><%= err.message %></li>
+    <% }) %> <% } %>
+  </ul>
   <div class="row">
     <div class="col-sm-8">
       <div class="card">
@@ -9,12 +13,20 @@
           <!-- Makes POST request to /register route -->
           <form action="/register" method="POST">
             <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" name="name" />
+            </div>
+            <div class="form-group">
               <label for="email">Email</label>
               <input type="email" class="form-control" name="username" />
             </div>
             <div class="form-group">
               <label for="password">Password</label>
               <input type="password" class="form-control" name="password" />
+            </div>
+            <div class="form-group">
+              <label for="password2">Confirm Password</label>
+              <input type="password" class="form-control" name="password2" />
             </div>
             <button type="submit" class="btn btn-dark">Register</button>
           </form>
