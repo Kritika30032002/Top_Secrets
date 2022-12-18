@@ -4,7 +4,7 @@
 }
 
 body {
-    background-image: linear-gradient(rgb(255, 255, 208), rgb(243, 204, 255), rgb(208, 156, 250), rgb(206, 236, 85));
+    background-image: linear-gradient(to right, rgb(250, 248, 241), rgb(250, 234, 177), rgb(229, 186, 115), rgb(197, 137, 64));
     width: 100vw;
     height: 100vh;
 }
@@ -27,7 +27,7 @@ header {
     margin-right: 1vw;
 }
 
-.logo img:hover{
+.logo img:hover {
     transform: rotate3d(1, 2, 30, 180deg);
     transition-duration: 1s;
 }
@@ -53,17 +53,18 @@ header {
     margin: auto 2vh auto 1vh;
 }
 
-.home:hover{
+.home:hover {
     cursor: pointer;
     background-color: rgb(255, 204, 0);
     width: 8.5vh;
     height: 4.5vh;
 }
-.left-side h1{
+
+.left-side h1 {
     margin: 10vh auto 5vh 10vw;
 }
 
-.forms{
+.forms {
     display: flex;
     flex-direction: column;
     width: 40vw;
@@ -75,13 +76,33 @@ header {
     align-items: center;
 }
 
-.forms form{
+.forms img{
+    width: 40vw;
+    height: 50vh;
+    opacity: 0.7;
+    position: absolute;
+    z-index: +1;
+    animation: blur 7200s linear 1s infinite reverse;
+}
+
+@keyframes blur {
+    0%{
+        z-index: +1;
+        opacity: 0.7;
+    }
+    100%{
+        z-index: -2;
+        opacity: 0.5;
+    }
+}
+
+.forms form {
     display: flex;
     flex-direction: column;
     margin: 5vh auto 1vh 6vw;
 }
 
-.forms form input{
+.forms form input {
     width: 25vw;
     height: 3vh;
     margin-bottom: 2vh;
@@ -91,7 +112,11 @@ header {
     font-size: 2vh;
 }
 
-.login{
+.forms form input:focus{
+    background-color: rgb(108, 246, 246);
+}
+
+.login {
     width: 6vw;
     height: 4vh;
     border: none;
@@ -102,25 +127,29 @@ header {
     cursor: pointer;
 }
 
-.other-options{
+.login:active{
+    box-shadow: 5px 5px 5px rgb(249, 157, 46);
+}
+
+.other-options {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.other-options a{
+.other-options a {
     margin: 0.5vh auto 0.5vh auto;
     color: rgb(248, 251, 238);
     font-weight: bolder;
     font-family: 'Poppins', sans-serif;
 }
 
-.other-options a:hover{
+.other-options a:hover {
     cursor: pointer;
     color: rgb(16, 185, 252);
 }
 
-.google-signin{
+.google-signin {
     margin: 1vh auto 3vh auto;
     border: none;
     border-top-left-radius: 7px;
@@ -136,38 +165,68 @@ header {
     cursor: pointer;
 }
 
-.login-page{
+.google-signin:active{
+    box-shadow: 5px 5px 5px rgb(46, 124, 249);
+}
+
+.login-page {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.right-side{
+.right-side {
     margin-right: 20vw;
 }
 
-.right-side img{
+.secret{
     width: 20vw;
     height: 30vh;
     border: none;
     border-top-left-radius: 15px;
     border-bottom-right-radius: 15px;
     animation: Flip-card 0.25s linear 0s 1 reverse;
+    position: absolute;
+    z-index: -1;
 }
 
-.right-side img:hover{
-    cursor: pointer;
-    transform: rotateY(180deg);
+.secret-2{
+    width: 20vw;
+    height: 30vh;
+    border: none;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    animation: become-blur 3s linear 0s 1 reverse;
+}
+
+@keyframes become-blur {
+    0%{
+        z-index: +1;
+    }
+    30%{
+        z-index: +1;
+        opacity: 0.8;
+    }
+    70%{
+        z-index: +1;
+        opacity: 0.3; 
+    }
+    100%{
+        z-index: -1;
+        opacity: 0;
+    }
 }
 
 @keyframes Flip-card {
-    0%{
+    0% {
         transform: rotateY(60deg);
     }
-    50%{
+
+    50% {
         transform: rotateY(120deg);
     }
-    100%{
+
+    100% {
         transform: rotateY(180deg);
     }
 }
