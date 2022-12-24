@@ -1,19 +1,19 @@
 
 ![License](https://img.shields.io/github/license/Kritika30032002/Top_Secrets.svg?style=for-the-badge) ![Repo Size](https://img.shields.io/github/languages/code-size/Kritika30032002/Top_Secrets.svg?style=for-the-badge) ![TOP_LANGUAGE](https://img.shields.io/github/languages/top/Kritika30032002/Top_Secrets.svg?style=for-the-badge) ![FORKS](https://img.shields.io/github/forks/Kritika30032002/Top_Secrets.svg?style=for-the-badge&social) ![Stars](https://img.shields.io/github/stars/Kritika30032002/Top_Secrets.svg?style=for-the-badge)
-    
-    
-    
-   
+
+
+
+
 <b> <a href="https://discord.gg/VCTyVXRf" target="_blank">
 <font size="3200"> Be a part of our Community on Discord 🚀</font>
 </a>
 </b>
 
 
- 
+
  # Top_Secrets
  This is a website that allows user to add their secrets anonymously to the website. Thus makes its interesting. One can add their secrets that they don't want to share with anyone.
- 
+
  # Technologies
 - HTML
 - Javascript
@@ -106,6 +106,43 @@ Now you know some basic terms, let's get into how to get started with some resou
 
 That being said, this codebase isn't your typical open source project because it's not a library or package with a limited scope—it's our entire product.
 
+* Contributions make the open source community such an amazing place to learn, inspire, and create.
+* Any contributions you make are greatly appreciated.
+* Check out our contribution guidelines for more information.
+## Want to contribute?
+---
+* Take a look at contributing guidelines.
+* Refer GitHub Flow.
+## Don't forget to leave a star✨
+# HAPPY CONTRIBUTING!!
+
+## 🛠️ Installation Steps
+***
+1.[Fork](https://github.com/Kritika30032002/Top_Secrets.git) the project.
+
+2. Clone the project, you can use the following command:
+```
+git clone https://github.com/Kritika30032002/Top_Secrets.git
+```
+## 🥂 After making a change
+---
+1. Create a new branch
+```
+git checkout -b YourBranchName
+```
+2. Add it to staging area
+```
+git add <path to the file you worked on>
+```
+3. Commit your changes with
+```
+git commit -m "message"
+```
+4. Push your changes
+```
+git push
+```
+
 ## Rules
 
 - **No `console.log`s in any file**: We use the `debug` module across the codebase to log debugging information in development only. Never commit a file that contains a `console.log` as CI will fail your build. The only exceptions are errors, which you can log, but you have to use `console.error` to be explicit about it
@@ -134,10 +171,7 @@ If you found a technical bug on the website or have ideas for features we should
 Thanks a lot for spending your time helping Top_Secrets to grow. Thanks a lot! Keep rocking 🍻
 Also Give it a Star 🌟, If you loved contributing to the project.
 
-  
+
 ## License
 
 MIT License, see the [LICENSE](./LICENSE) file.
-
-
-    
