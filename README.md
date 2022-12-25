@@ -34,35 +34,34 @@ git clone https://github.com/Kritika30032002/Top_Secrets.git
 
 ```
 
+
+
+### Running the app locally 💻
+
+Following are the steps to run the backend of the community-website on your local.
+
 ### Installation
 
 Top_Secrets has a single installation step:
 
-- **Install the dependencies**:
+1. - **Install the dependencies**:
+Install all the required packages and dependencies.
+  ```node
+  npm install
+  ```
+  Ps: if you're getting error installing the dependencies, try --force command along with npm install. For example
 
-```sh
+  ```sh
 
-npm install
+  npm install --force
 
-```
+  ```
 
-You've now finished installing everything! Let's start :100:
+  You've now finished installing everything! Let's start :100:
 
-Ps: if you're getting error installing the dependencies, try --force command along with npm install. For example
+    Now you're ready to run the app locally and sign into your local instance!
 
-```sh
-
-npm install --force
-
-```
-
-Now you're ready to run the app locally and sign into your local instance!
-
-### Running the app locally
-
-#### Start the servers
-
-To Start the development server run
+2. To Start the development server run
 
 ```sh
 node app.js
@@ -73,10 +72,14 @@ Or if you have nodemon installed on your system , run
 nodemon app.js
 ```
 
-Open chrome and run
-```sh
-http://localhost:3000/
-```
+
+3. [Click here](http://localhost:3000) to see the backend server runing in the browser OR navigate to
+  ```text
+  http://localhost:3000
+  ```
+
+#### Start the servers
+
 
 <div  align="center"><img  height="200px"  src="https://user-images.githubusercontent.com/77617189/192947926-37284128-9965-46a4-b29b-c75e47b2f76b.svg"  /></div>
 
