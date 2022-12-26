@@ -1,7 +1,9 @@
 body {
   background-color: #e8ecef;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 .centered {
   padding-top: 200px;
   text-align: center;
@@ -26,6 +28,26 @@ body {
   min-width: 300px;
   max-width: 600px;
 }
+
+#myBtn {
+  display: block;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: white;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 45%;
+  transition: 0.3s;
+}
+#myBtn:hover {
+  transform: scale(1.1);
+  background-color: rgb(173, 167, 167);
+}
+
 @media screen and (max-width: 992px) {
   .register {
     display: none;
