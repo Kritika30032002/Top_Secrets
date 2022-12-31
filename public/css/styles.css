@@ -9,6 +9,26 @@ html {
   text-align: center;
 }
 
+.form-inline a {
+  transition: 0.3s;
+}
+.form-inline a:hover {
+  transform: scale(1.1);
+}
+.container a {
+  transition: 0.3s;
+}
+.container a:hover {
+  transform: scale(1.1);
+}
+
+.social {
+  transition: 0.3s;
+}
+.social:hover {
+  transform: scale(1.2);
+}
+
 .secret-text {
   text-align: center;
   font-size: 2rem;
