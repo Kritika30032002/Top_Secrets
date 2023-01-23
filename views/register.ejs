@@ -1,12 +1,13 @@
 <%- include('partials/header') %>
 <div class="container mt-5" style="margin-bottom: 197px">
   <h1>Register</h1>
-  <ul>
-    <% if(typeof error !='undefined' ) { %> <% error.forEach(err=> { %>
-    <li><%= err.message %></li>
-    <% }) %> <% } %>
-  </ul>
+  
   <div class="row">
+    <ul>
+      <% if(typeof error !='undefined' ) { %> <% error.forEach(err=> { %>
+      <li><%= err.message %></li>
+      <% }) %> <% } %>
+    </ul>
     <div class="col-sm-8">
       <div class="card">
         <div class="card-body">
