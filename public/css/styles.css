@@ -65,7 +65,7 @@ html {
 }
 #myBtn:hover {
   transform: scale(1.1);
-  background-color: rgb(173, 167, 167);
+  background-color: rgb(95, 71, 25);
 }
 
 @media screen and (max-width: 992px) {
