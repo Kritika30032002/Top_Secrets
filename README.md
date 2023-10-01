@@ -1,6 +1,7 @@
 
 ![License](https://img.shields.io/github/license/Kritika30032002/Top_Secrets.svg?style=for-the-badge) ![Repo Size](https://img.shields.io/github/languages/code-size/Kritika30032002/Top_Secrets.svg?style=for-the-badge) ![TOP_LANGUAGE](https://img.shields.io/github/languages/top/Kritika30032002/Top_Secrets.svg?style=for-the-badge) ![FORKS](https://img.shields.io/github/forks/Kritika30032002/Top_Secrets.svg?style=for-the-badge&social) ![Stars](https://img.shields.io/github/stars/Kritika30032002/Top_Secrets.svg?style=for-the-badge)
 
+Join the [discord server](https://discord.gg/JdFsJPrayj) for more discussion: 
 
  # Top_Secrets
  This is a website that allows user to add their secrets anonymously to the website. Thus makes its interesting. One can add their secrets that they don't want to share with anyone.
@@ -24,8 +25,6 @@
 git clone https://github.com/Kritika30032002/Top_Secrets.git
 
 ```
-
-
 
 ### Running the app locally 💻
 
@@ -103,21 +102,13 @@ That being said, this codebase isn't your typical open source project because it
 * Contributions make the open source community such an amazing place to learn, inspire, and create.
 * Any contributions you make are greatly appreciated.
 * Check out our contribution guidelines for more information.
-## Want to contribute?
----
-* Take a look at contributing guidelines.
-* Refer GitHub Flow.
+
+
 ## Don't forget to leave a star✨
 # HAPPY CONTRIBUTING!!
 
-## 🛠️ Installation Steps
-***
-1.[Fork](https://github.com/Kritika30032002/Top_Secrets.git) the project.
 
-2. Clone the project, you can use the following command:
-```
-git clone https://github.com/Kritika30032002/Top_Secrets.git
-```
+
 ## 🥂 After making a change
 ---
 1. Create a new branch
