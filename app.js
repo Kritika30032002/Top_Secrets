@@ -115,6 +115,20 @@ app.get("/login",function(req,res){
 app.get("/about",function(req,res){
   res.render("about");
 });
+app.post("/register", function (req, res) {
+  const { username, password } = req.body;
+
+  // Server-side password validation
+  const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  if (!regex.test(password)) {
+    return res.status(400).render("register", { error: "Invalid password" });
+  }
+
+  // Continue with registration logic
+  // ... (create user account, save to database, etc.)
+
+  res.status(200).send("Registration successful");
+});
 app.get("/register",function(req,res){
   res.render("register");
 });
