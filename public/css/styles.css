@@ -9,6 +9,8 @@ html {
   text-align: center;
 }
 
+
+
 .form-inline a {
   transition: 0.3s;
 }
@@ -38,15 +40,16 @@ html {
 .container-about {
   display: flex;
   flex-direction: row;
-  margin-bottom: 197px;
-  margin-top: 197px;
+  margin-bottom: 100px;
+  margin-top: -33px;
   /* flex-direction: row; */
   justify-content: center;
   align-items: center;
 }
 .container-image {
-  min-width: 300px;
-  max-width: 600px;
+  min-width: 450px;
+  max-width: 500px;
+  margin-right: 1%;
 }
 
 #myBtn {

@@ -1,6 +1,9 @@
 <%- include('partials/header') %>
 
-  <div class="jumbotron centered">
+  <div style="background: #74ebd5;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #ACB6E5, #74ebd5);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #ACB6E5, #74ebd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+" class="jumbotron centered">
     <div class="container">
       <i class="fas fa-key fa-6x"></i>
       <h1 class="display-3">Secrets</h1>
@@ -14,7 +17,7 @@
   </div>
   <a href="#navbar" id="myBtn" title="Go to top">
     <img src="https://img.icons8.com/ios-filled/50/000000/long-arrow-up.png"
-      style="width: 70%; height: 70%; color: white; position: relative; left: 7px" />
+      style="width: 60%; height: 70%; color: white; position: relative; left: 7px" />
   </a>
 
   <%- include('partials/footer') %>
