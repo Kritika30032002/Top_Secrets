@@ -34,7 +34,7 @@ Following are the steps to run the backend of the community-website on your loca
 
 Top_Secrets has a single installation step:
 
-1. - **Install the dependencies**:
+1. **Install the dependencies**:
 Install all the required packages and dependencies.
   ```node
   npm install
@@ -46,7 +46,21 @@ Install all the required packages and dependencies.
   npm install --force
 
   ```
+### Create a `.env` file in the root directory
 
+-Refer to this video for **google id and secret key** : https://www.youtube.com/watch?v=XiuA-xO5Pz8 
+<br>
+-Refer to this video for **facebook id and secret key**: https://www.youtube.com/watch?v=LLlpH3vZVkg&t=258s
+
+- paste these line in the .env file and update with your respective values:
+```
+GOOGLE_ID=<YOUR GOOGLE ID>
+GOOGLE_SECRET=<YOUR GOOGLE SECRET KEY>
+FACEBOOK_APP_ID=<YOUR FACEBOOK APP ID>
+FACEBOOK_APP_SECRET=<YOUR FACEBOOK SECRET KEY>
+```
+
+Now you're ready to run the app locally and sign into your local instance!
   You've now finished installing everything! Let's start :100:
 
     Now you're ready to run the app locally and sign into your local instance!
