@@ -58,31 +58,31 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
-// passport.use(new GoogleStrategy({
-//     clientID: process.env.CLIENT_ID,
-//     clientSecret: process.env.CLIENT_SECRET,
-//     callbackURL: "http://localhost:3000/auth/google/secrets",
-//     userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
-//   },
-//   function(accessToken, refreshToken, profile, cb) {
-//     console.log(profile);
-//     User.findOrCreate({ googleId: profile.id }, function (err, user) {
-//       return cb(err, user);
-//     });
-//   }
-// ));
+passport.use(new GoogleStrategy({
+    clientID: process.env.GOOGLE_ID,   // Include your App ID
+    clientSecret: process.env.GOOGLE_SECRET,    // Include you App Secret
+    callbackURL: "http://localhost:3000/auth/google/secrets",
+    userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
+  },
+  function(accessToken, refreshToken, profile, cb) {
+    console.log(profile);
+    User.findOrCreate({ googleId: profile.id }, function (err, user) {
+      return cb(err, user);
+    });
+  }
+));
 
-// passport.use(new FacebookStrategy({
-//   clientID: FACEBOOK_APP_ID, // Include your App ID
-//   clientSecret: FACEBOOK_APP_SECRET, // Include you App Secret
-//   callbackURL: "http://localhost:3000/auth/facebook/secrets"
-// },
-// function(accessToken, refreshToken, profile, cb) {
-//   User.findOrCreate({ facebookId: profile.id }, function (err, user) {
-//     return cb(err, user);
-//   });
-// }
-// ));
+passport.use(new FacebookStrategy({
+  clientID: process.env.FACEBOOK_APP_ID, // Include your App ID
+  clientSecret: process.env.FACEBOOK_APP_SECRET, // Include you App Secret
+  callbackURL: "http://localhost:3000/auth/facebook/secrets"
+},
+function(accessToken, refreshToken, profile, cb) {
+  User.findOrCreate({ facebookId: profile.id }, function (err, user) {
+    return cb(err, user);
+  });
+}
+));
 
 app.get("/",function(req,res){
   res.render("home");
@@ -220,48 +220,48 @@ app.post("/login",function(req,res){
     });
 
 
-// app.post("/register",function(req,res){
-//   bcrypt.hash(req.body.password, saltRounds, function(err, hash) {
-//     // Store hash in your password DB.
-//     const newUser = new User({
-//       email:req.body.username,
-//         password:hash
-//       // password:md5(req.body.password)
-//     });
-//
-//     newUser.save(function(err){
-//       if(err){
-//         console.log(err);
-//       }else{
-//         res.render("secrets");
-//       }
-//     });
-// });
-//
-// });
+app.post("/register",function(req,res){
+  bcrypt.hash(req.body.password, saltRounds, function(err, hash) {
+    // Store hash in your password DB.
+    const newUser = new User({
+      email:req.body.username,
+        password:hash
+      // password:md5(req.body.password)
+    });
 
-// app.post("/login",function(req,res){
-//   const username= req.body.username;
-//   const password= req.body.password;
-//
-//   User.findOne({email:username},function(err,foundUser){
-//     if(err){
-//       console.log(err);
-//     }
-//     else{
-//       if(foundUser){
-//         bcrypt.compare(password, foundUser.password, function(err, result) {
-//     // result == true
-//       if(result ===true){
-//       res.render("secrets");
-//     }
-// });
-//
-//         }
-//       }
-//
-//   });
-// });
+    newUser.save(function(err){
+      if(err){
+        console.log(err);
+      }else{
+        res.render("secrets");
+      }
+    });
+});
+
+});
+
+app.post("/login",function(req,res){
+  const username= req.body.username;
+  const password= req.body.password;
+
+  User.findOne({email:username},function(err,foundUser){
+    if(err){
+      console.log(err);
+    }
+    else{
+      if(foundUser){
+        bcrypt.compare(password, foundUser.password, function(err, result) {
+    // result == true
+      if(result ===true){
+      res.render("secrets");
+    }
+});
+
+        }
+      }
+
+  });
+});
 
 app.listen(3000,function(){
     console.log("Server started on port 3000.");
