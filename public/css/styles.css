@@ -9,7 +9,15 @@ html {
   text-align: center;
 }
 
+@media (max-width: 1000px) and (min-width: 320px) {
+  .jumbotron {
+    min-height: 100vh;
+  }
 
+  h1 {
+    font-size: xx-large;
+  }
+}
 
 .form-inline a {
   transition: 0.3s;
