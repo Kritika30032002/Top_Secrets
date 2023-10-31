@@ -12,10 +12,11 @@ html {
 @media (max-width: 1000px) and (min-width: 320px) {
   .jumbotron {
     min-height: 100vh;
-  }
-
-  h1 {
-    font-size: xx-large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    font-size: x-large;
   }
 }
 
