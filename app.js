@@ -130,7 +130,7 @@ app.post("/register", function (req, res) {
     req.body.password,
     function (err, user) {
       if (err) {
-        console.log(err);
+        // console.log(err);
         res.redirect("/register");
       } else {
         passport.authenticate("local")(req, res, function () {
@@ -152,7 +152,7 @@ app.post(
 app.get("/secrets", function (req, res) {
   User.find({ secret: { $ne: null } }, function (err, foundUsers) {
     if (err) {
-      console.log(err);
+      // console.log(err);
     } else {
       if (foundUsers) {
         res.render("secrets", { usersWithSecrets: foundUsers });
@@ -173,7 +173,7 @@ app.post("/submit", function (req, res) {
   const submittedSecret = req.body.secret;
   User.findById(req.user.id, function (err, foundUser) {
     if (err) {
-      console.log(err);
+      // console.log(err);
     } else {
       if (foundUser) {
         foundUser.secret = submittedSecret;
@@ -191,5 +191,5 @@ app.get("/logout", function (req, res) {
 });
 
 app.listen(3000, function () {
-  console.log("Server started on port 3000.");
+  // console.log("Server started on port 3000.");
 });
