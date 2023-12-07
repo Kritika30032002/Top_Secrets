@@ -14,6 +14,7 @@ const FacebookStrategy = require("passport-facebook").Strategy;
 const app = express();
 
 app.use(express.static("public"));
+app.use(express.json());
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -131,10 +132,10 @@ app.post("/register", function (req, res) {
     function (err, user) {
       if (err) {
         console.log(err);
-        res.redirect("/register");
+        res.send({ success: false, message: err.message })
       } else {
         passport.authenticate("local")(req, res, function () {
-          res.redirect("/secrets");
+          res.send({ success: true, message: "Registration Successful, Login to continue"})
         });
       }
     }
