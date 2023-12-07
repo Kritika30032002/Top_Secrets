@@ -165,8 +165,7 @@ app.get("/submit-secret-form", function (req, res) {
   if (req.isAuthenticated()) {
     res.render("secret-form");
   } else {
-    res.render("secret-form");
-    //res.redirect("/login");
+    res.redirect("/login");
   }
 });
 
