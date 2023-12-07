@@ -1,143 +1,61 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8" />
-    <title>Secrets</title>
-    <link rel="icon" type="image/x-icon" href="image/key.ico" />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="css/bootstrap-social.css" />
-    <link rel="stylesheet" href="css/styles.css" />
-  </head>
+<%- include('partials/header') %>
 
-  <body style="background: #ADA996;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  ">
-    <nav class="navbar navbar-dark bg-dark justify-content-between" id="navbar">
-      <a
-        href="/"
-        class="navbar-brand"
-        style="color: white; cursor: pointer; margin-left: 1em"
-      >
-        <i class="fas fa-key fa-1.5x logo" style="color: white"></i>
-        Secrets</a
-      >
-      <form class="form-inline">
-        <a
-          href="/"
-          class="btn my-2 my-sm-0 home"
-          type="submit"
-          style="
-            color: black;
-            border: none;
-            background-color: white;
-            margin-right: 1em;
-          "
-        >
-          Home
-        </a>
-        <a
-          href="/about"
-          class="btn my-2 my-sm-0 about"
-          type="submit"
-          style="
-            color: black;
-            border: none;
-            background-color: white;
-            margin-right: 1em;
-          "
-        >
-          About
-        </a>
-        <a
-          href="/register"
-          class="btn my-1 my-sm-0 register"
-          type="submit"
-          style="
-            color: black;
-            border: none;
-            background-color: white;
-            margin-right: 1em;
-          "
-        >
-          Register
-        </a>
-        <a
-          href="/login"
-          class="btn my-2 my-sm-0 login"
-          type="submit"
-          style="
-            color: black;
-            border: none;
-            background-color: white;
-            margin-right: 1em;
-          "
-        >
-          Login
-        </a>
-      </form>
-    </nav>
-  </body>
-</html>
+<div class="container mt-5" style="margin-bottom: 197px">
+  <h1>Login</h1>
 
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-body">
+          <!-- Makes POST request to /login route -->
+          <form action="/login" method="POST">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" name="username" />
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" name="password" />
+            </div>
+            <button type="submit" class="btn btn-dark col-2">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
 
-  <div class="container mt-5" style="margin-bottom: 197px">
-    <h1>Login</h1>
-
-    <div class="row">
-      <div class="col-sm-8">
-        <div class="card">
-          <div class="card-body">
-            <!-- Makes POST request to /login route -->
-            <form action="/login" method="POST">
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" name="username" />
-              </div>
-              <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" name="password" />
-              </div>
-              <button type="submit" class="btn btn-dark col-2">Login</button>
-            </form>
-          </div>
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body">
+          <a
+            class="btn btn-block btn-social btn-google"
+            href="/auth/google"
+            role="button"
+          >
+            <i class="fab fa-google"></i>
+            Sign In with Google
+          </a>
         </div>
       </div>
 
-      <div class="col-sm-4">
-        <div class="card">
-          <div class="card-body">
-            <a class="btn btn-block btn-social btn-google" href="/auth/google" role="button">
-              <i class="fab fa-google"></i>
-              Sign In with Google
-            </a>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-body">
-            <a class="btn btn-block btn-social btn-facebook" href="/auth/facebook" role="button">
-              <i class="fab fa-facebook"></i>
-              Sign In with Facebook
-            </a>
-          </div>
+      <div class="card">
+        <div class="card-body">
+          <a
+            class="btn btn-block btn-social btn-facebook"
+            href="/auth/facebook"
+            role="button"
+          >
+            <i class="fab fa-facebook"></i>
+            Sign In with Facebook
+          </a>
         </div>
       </div>
     </div>
   </div>
-  <a href="#navbar" id="myBtn" title="Go to top">
-    <img src="https://img.icons8.com/ios-filled/50/000000/long-arrow-up.png"
-      style="width: 70%; height: 70%; color: white; position: relative; left: 7px" />
-  </a>
-  <%- include('partials/footer') %>
+</div>
+<a href="#navbar" id="myBtn" title="Go to top">
+  <img
+    src="https://img.icons8.com/ios-filled/50/000000/long-arrow-up.png"
+    style="width: 70%; height: 70%; color: white; position: relative; left: 7px"
+  />
+</a>
+<%- include('partials/footer') %>

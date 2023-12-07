@@ -8,6 +8,17 @@ html {
   padding-top: 200px;
   text-align: center;
 }
+#theme-toggle {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  font-size: 20px;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  margin-right: 1em;
+}
 
 @media (max-width: 1000px) and (min-width: 320px) {
   .jumbotron {
