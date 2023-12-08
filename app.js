@@ -29,7 +29,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb://127.0.0.1:27017/userDB");
+//mongoose.connect("mongodb://127.0.0.1:27017/userDB");
 
 const userSchema = new mongoose.Schema({
   username: String,
@@ -191,6 +191,17 @@ app.get("/logout", function (req, res) {
   res.redirect("/");
 });
 
-app.listen(3000, function () {
-  console.log("Server started on port 3000.");
+app.listen(process.env.PORT, () => {
+  mongoose
+    .connect(process.env.MONGO_SERVER, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    })
+    .then(() => {
+      console.log("Database connected successfully");
+    })
+    .catch((error) => {
+      console.log("DB connection failed", error);
+    });
+  console.log(`Server is running on ${process.env.port}`);
 });

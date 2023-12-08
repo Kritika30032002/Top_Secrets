@@ -233,11 +233,13 @@
             if (response.ok) {
               const data = await response.json();
               if (data.success) {
-                Toastify({
+                await Toastify({
                   text: data.message,
                   type: "success",
                 }).showToast();
-                window.location.href = "/login"; // Redirect to login page
+
+                window.location.href = "/login";  // Redirect to login page
+                window.alert("Registration successful! Login to continue") 
               } else {
                 Toastify({
                   text: data.message,
