@@ -188,8 +188,12 @@
     <script>
       // Initialize Toastify globally
       Toastify({
-        position: "toast-top-right",
+        position: "toast-top-left",
+        duration: 3000,
         className: "toastify-library-class",
+        style: {
+              background: "linear-gradient(to right, #4E575F,#343A40)",
+            },
       });
 
       function validatePassword() {
@@ -201,6 +205,10 @@
           Toastify({
             text: "Password must have at least 8 characters, including one uppercase letter, one lowercase letter, one number, and one special character.",
             type: "error",
+            style: {
+              background: "linear-gradient(to right, #4E575F,#343A40)",
+            },
+            duration: 3000,
           }).showToast();
           return false;
         }
@@ -238,12 +246,15 @@
                   type: "success",
                 }).showToast();
 
-                window.location.href = "/login";  // Redirect to login page
-                window.alert("Registration successful! Login to continue") 
+                window.location.href = "/login"; // Redirect to login page
+                window.alert("Registration successful! Login to continue");
               } else {
                 Toastify({
                   text: data.message,
                   type: "error",
+                  style: {
+              background: "linear-gradient(to right, #4E575F,#343A40)",
+            },
                 }).showToast();
               }
             } else {
@@ -251,6 +262,9 @@
               Toastify({
                 text: "Error! Please try again later",
                 type: "error",
+                style: {
+              background: "linear-gradient(to right, #4E575F,#343A40)",
+            },
               }).showToast();
             }
           } catch (error) {
@@ -258,6 +272,9 @@
             Toastify({
               text: "Error! Please try again later",
               type: "error",
+              style: {
+              background: "linear-gradient(to right, #4E575F,#343A40)",
+            },
             }).showToast();
           }
         }
