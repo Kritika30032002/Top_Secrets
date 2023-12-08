@@ -106,3 +106,35 @@ html {
     max-width: 600px;
   }
 }
+.button_all_white{
+  width: fit-content;
+  height: fit-content;
+  background-color:white;
+  padding:5px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color:black;
+  margin:5px;
+  cursor: pointer;
+}
+.button_all_black{
+  width: fit-content;
+  height: fit-content;
+  background-color:black;
+  padding:5px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color:white;
+  margin:5px;
+  cursor: pointer;
+}
+.button_all_black:hover{
+  text-decoration: none;
+  color:white;
+}
+.button_all_white:hover{
+  text-decoration: none;
+  color:black;
+}
