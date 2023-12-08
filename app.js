@@ -161,15 +161,15 @@ app.get("/secrets", function (req, res) {
   });
 });
 
-app.get("/submit", function (req, res) {
+app.get("/submit-secret-form", function (req, res) {
   if (req.isAuthenticated()) {
-    res.render("submit");
+    res.render("secret-form");
   } else {
     res.redirect("/login");
   }
 });
 
-app.post("/submit", function (req, res) {
+app.post("/submit-secret-form", function (req, res) {
   const submittedSecret = req.body.secret;
   User.findById(req.user.id, function (err, foundUser) {
     if (err) {

@@ -1,0 +1,36 @@
+body.dark {
+  background-color: #0f0e0e;
+  color: white;
+}
+#theme-toggle.dark {
+  background: #0e0d0d;
+  color: white;
+}
+.form-inline a.dark {
+  background-color: #0e0d0d !important;
+  color: white !important;
+}
+.jumbotron.dark {
+  color: white !important;
+  background: #005d4c; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #212a51,
+    #00735e
+  ) !important; /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #212a51,
+    #00735e
+  ) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.about-title.dark {
+  color: white !important;
+}
+
+.card-body.dark {
+  background-color: #302930 !important;
+  outline: none !important;
+  border: none !important;
+}

@@ -18,6 +18,7 @@
     />
     <link rel="stylesheet" href="css/bootstrap-social.css" />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/dark-styles.css" />
   </head>
 
   <body>
@@ -31,6 +32,10 @@
         Secrets</a
       >
       <form class="form-inline">
+        <button id="theme-toggle">
+          <i class="fas fa-sun" style="display: none"></i>
+          <i class="fas fa-moon"></i>
+        </button>
         <a
           href="/"
           class="btn my-2 my-sm-0 home"
@@ -85,5 +90,50 @@
         </a>
       </form>
     </nav>
+    <script>
+      function toggleTheme() {
+        document.querySelectorAll("*").forEach((el) => {
+          el.classList.toggle("dark");
+        });
+        // changing the icon inside the theme toggle button
+        if (localStorage.getItem("theme") === "light") {
+          document.querySelector("#theme-toggle .fa-sun").style.display =
+            "none";
+          document.querySelector("#theme-toggle .fa-moon").style.display =
+            "inline-block";
+        } else {
+          document.querySelector("#theme-toggle .fa-sun").style.display =
+            "inline-block";
+          document.querySelector("#theme-toggle .fa-moon").style.display =
+            "none";
+        }
+      }
+
+      if (!localStorage.getItem("theme")) {
+        // if theme is not already set on localstorage
+        if (
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches
+        ) {
+          // dark mode preferred by user as per os settings
+          localStorage.setItem("theme", "dark");
+        } else {
+          localStorage.setItem("theme", "light");
+        }
+      }
+      window.onload = function () {
+        if (localStorage.getItem("theme") === "dark") {
+          toggleTheme();
+        }
+      };
+      document.getElementById("theme-toggle").addEventListener("click", (e) => {
+        e.preventDefault();
+        localStorage.setItem(
+          "theme",
+          localStorage.getItem("theme") === "light" ? "dark" : "light"
+        );
+        toggleTheme();
+      });
+    </script>
   </body>
 </html>
