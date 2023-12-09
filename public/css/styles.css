@@ -8,6 +8,46 @@ html {
   padding-top: 200px;
   text-align: center;
 }
+.about-title{
+  text-align: center;
+  letter-spacing: 0.01em;
+  padding:20px;
+  font: 8rem itc-bodoni-175, serif;
+  font-style: italic;
+  color: black;
+}
+@media (max-width:760px) {
+  .about-title{
+    font-size: 6rem;
+  }
+}
+@media (max-width:580px) {
+  .about-title{
+    font-size: 4rem;
+  }
+}
+@media (max-width:400px) {
+  .about-title{
+    font-size: 3rem;
+  }
+}
+
+/* .con */
+@media screen and (max-width:400px) {
+  .navbar{
+    justify-content: center!important;
+  }
+}
+.paragraph{
+  margin-left:11%;
+}
+@media screen and (max-width:992px){
+  .paragraph{
+    text-align: center;
+    margin:auto;
+    padding:10px;
+  }
+}
 #theme-toggle {
   cursor: pointer;
   border: none;
@@ -30,7 +70,6 @@ html {
     font-size: x-large;
   }
 }
-
 .form-inline a {
   transition: 0.3s;
 }
@@ -69,21 +108,39 @@ html {
 .container-image {
   min-width: 450px;
   max-width: 500px;
-  margin-right: 1%;
+  margin: 20px!important;
 }
-
+@media (min-width:450px){
+  .container-image {
+    min-width:300px;
+    max-width:450px;
+    margin:20px!important;
+  }
+}
+@media (min-width:200px){
+  .container-image {
+    min-width:200px;
+    max-width:300px;
+    margin:20px!important;
+  }
+}
+@media (min-width:200px) and (max-width:400px){
+  .container-image img {
+    transform: scale(0.9);
+  }
+}
 #myBtn {
   display: block;
   position: fixed;
   bottom: 20px;
-  right: 30px;
+  right: 20px;
   z-index: 99;
-  border: none;
+  border: 1px solid black;
+  border-radius: 50%;
   outline: none;
   background-color: white;
   cursor: pointer;
   padding: 10px;
-  border-radius: 45%;
   transition: 0.3s;
 }
 #myBtn:hover {
@@ -137,4 +194,22 @@ html {
 .button_all_white:hover{
   text-decoration: none;
   color:black;
+}
+.display-3{
+  font-size: 5rem;
+}
+@media (min-width:600px) and (max-width:850px){
+  .display-3{
+    font-size: 3rem;
+  }
+}
+@media (min-width:400px) and (max-width:600px){
+  .display-3{
+    font-size: 2.5rem;
+  }
+}
+@media (min-width:200px) and (max-width:400px){
+  .display-3{
+    font-size: 2rem;
+  }
 }
