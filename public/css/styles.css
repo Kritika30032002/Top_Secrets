@@ -33,10 +33,69 @@ html {
 }
 
 /* .con */
+.hamburger{
+  display: none;
+}
 @media screen and (max-width:400px) {
-  .navbar{
-    justify-content: center!important;
+  .hamburger{
+    display: block;
+    color:#343A40;
+    padding:3px 8px;
+    background-color: white;
+    border:1px solid black;
+    border-radius: 2px;
   }
+}
+@media screen and (max-width:400px) {
+  .form-inline a{
+    display: none;
+  }
+}
+.side_nav{
+  display: none;
+}
+@media (max-width:400px){
+  .side_nav{
+    height: fit-content;
+    width:200px;
+    position: fixed;
+    z-index: 12;
+    top: 56px;
+  }
+  .side_nav .content{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .side_nav .content a{
+    color:white;
+    background-color: #343A40;
+    border-radius: 0px;
+    border:1px solid black;
+    border-radius: 5px 0px 0px 5px;
+  }
+  @media (min-width:200px) and (max-width:400px){
+    .side_nav .content a{
+      margin:0px!important;
+    }
+  }
+  .side_nav .content a:hover{
+    background-color: black;
+    color: white;
+  }
+  .side_nav{
+    display: block;
+    right: 0px;
+    transition: right 0.3s ease-in-out;
+  }
+}
+.hide{
+  overflow: hidden;
+  height: 0;
+  max-height: 0;
+  right:-400px;
+  transition: right 0.3s ease-in-out;
 }
 .paragraph{
   margin-left:11%;
@@ -132,8 +191,8 @@ html {
 #myBtn {
   display: block;
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 10px;
+  right: 10px;
   z-index: 99;
   border: 1px solid black;
   border-radius: 50%;
@@ -141,6 +200,7 @@ html {
   background-color: white;
   cursor: pointer;
   padding: 10px;
+  transform: scale(0.6);
   transition: 0.3s;
 }
 #myBtn:hover {

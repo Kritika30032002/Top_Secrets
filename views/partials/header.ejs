@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="css/dark-styles.css" />
   </head>
 
-  <body>
+  <body oncanplay="toggle_nav_body()">
     <nav class="navbar navbar-dark bg-dark justify-content-between" id="navbar">
       <a
         href="/"
@@ -89,9 +89,54 @@
         >
           Login
         </a>
+        <div class="hamburger" onclick="toggle_nav()">
+          <i class="fa fa-bars"></i>
+        </div>
       </form>
     </nav>
+    <div class="hide" id="nav_small">
+      <div class="hide" id="nav_small2">
+        <a
+          href="/"
+          class="btn my-2 my-sm-0 home"
+          type="submit"
+          onclick="toggle_nav()"
+        >
+          Home
+        </a>
+        <a
+          href="/about"
+          class="btn my-2 my-sm-0 about"
+          type="submit"
+          onclick="toggle_nav()"
+        >
+          About
+        </a>
+      </div>
+    </div>
     <script>
+      function toggle_nav(){
+        let naV=document.getElementById("nav_small");
+        let Nav=document.getElementById("nav_small2");
+        if(naV.classList.contains("side_nav") && Nav.classList.contains("content")){
+          naV.classList.remove("side_nav");
+          naV.classList.add("hide");
+          Nav.classList.remove("content");
+          Nav.classList.add("hide");
+        }else{
+            naV.classList.remove("hide");
+            naV.classList.add("side_nav");
+            Nav.classList.remove("hide");
+          Nav.classList.add("content");
+        }
+      }
+      function toggle_nav_body(){
+        let naV=document.getElementById("nav_small");
+        if(naV.classList.contains("side_nav")){
+          naV.classList.remove("side_nav");
+          naV.classList.add("hide");
+        }
+      }
       function toggleTheme() {
         document.querySelectorAll("*").forEach((el) => {
           el.classList.toggle("dark");
