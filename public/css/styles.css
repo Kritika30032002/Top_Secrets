@@ -57,7 +57,7 @@ html {
 @media (max-width:400px){
   .side_nav{
     height: fit-content;
-    width:200px;
+    width:100vw;
     position: fixed;
     z-index: 12;
     top: 56px;
@@ -71,9 +71,8 @@ html {
   .side_nav .content a{
     color:white;
     background-color: #343A40;
-    border-radius: 0px;
-    border:1px solid black;
-    border-radius: 5px 0px 0px 5px;
+    border-radius:0px;
+    border: 1px solid black;
   }
   @media (min-width:200px) and (max-width:400px){
     .side_nav .content a{
@@ -94,7 +93,7 @@ html {
   overflow: hidden;
   height: 0;
   max-height: 0;
-  right:-400px;
+  right:-450px;
   transition: right 0.3s ease-in-out;
 }
 .paragraph{
