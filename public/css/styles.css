@@ -8,6 +8,104 @@ html {
   padding-top: 200px;
   text-align: center;
 }
+.about-title{
+  text-align: center;
+  letter-spacing: 0.01em;
+  padding:20px;
+  font: 8rem itc-bodoni-175, serif;
+  font-style: italic;
+  color: black;
+}
+@media (max-width:760px) {
+  .about-title{
+    font-size: 6rem;
+  }
+}
+@media (max-width:580px) {
+  .about-title{
+    font-size: 4rem;
+  }
+}
+@media (max-width:400px) {
+  .about-title{
+    font-size: 3rem;
+  }
+}
+
+/* .con */
+.hamburger{
+  display: none;
+}
+@media screen and (max-width:400px) {
+  .hamburger{
+    display: block;
+    color:#343A40;
+    padding:3px 8px;
+    background-color: white;
+    border:1px solid black;
+    border-radius: 2px;
+  }
+}
+@media screen and (max-width:400px) {
+  .form-inline a{
+    display: none;
+  }
+}
+.side_nav{
+  display: none;
+}
+@media (max-width:400px){
+  .side_nav{
+    height: fit-content;
+    width:100vw;
+    position: fixed;
+    z-index: 12;
+    top: 56px;
+  }
+  .side_nav .content{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .side_nav .content a{
+    color:white;
+    background-color: #343A40;
+    border-radius:0px;
+    border: 1px solid black;
+  }
+  @media (min-width:200px) and (max-width:400px){
+    .side_nav .content a{
+      margin:0px!important;
+    }
+  }
+  .side_nav .content a:hover{
+    background-color: black;
+    color: white;
+  }
+  .side_nav{
+    display: block;
+    right: 0px;
+    transition: right 0.3s ease-in-out;
+  }
+}
+.hide{
+  overflow: hidden;
+  height: 0;
+  max-height: 0;
+  right:-450px;
+  transition: right 0.3s ease-in-out;
+}
+.paragraph{
+  margin-left:11%;
+}
+@media screen and (max-width:992px){
+  .paragraph{
+    text-align: center;
+    margin:auto;
+    padding:10px;
+  }
+}
 #theme-toggle {
   cursor: pointer;
   border: none;
@@ -30,7 +128,6 @@ html {
     font-size: x-large;
   }
 }
-
 .form-inline a {
   transition: 0.3s;
 }
@@ -69,21 +166,40 @@ html {
 .container-image {
   min-width: 450px;
   max-width: 500px;
-  margin-right: 1%;
+  margin: 20px!important;
 }
-
+@media (min-width:450px){
+  .container-image {
+    min-width:300px;
+    max-width:450px;
+    margin:20px!important;
+  }
+}
+@media (min-width:200px){
+  .container-image {
+    min-width:200px;
+    max-width:300px;
+    margin:20px!important;
+  }
+}
+@media (min-width:200px) and (max-width:400px){
+  .container-image img {
+    transform: scale(0.9);
+  }
+}
 #myBtn {
   display: block;
   position: fixed;
-  bottom: 20px;
-  right: 30px;
+  bottom: 10px;
+  right: 10px;
   z-index: 99;
-  border: none;
+  border: 1px solid black;
+  border-radius: 50%;
   outline: none;
   background-color: white;
   cursor: pointer;
   padding: 10px;
-  border-radius: 45%;
+  transform: scale(0.6);
   transition: 0.3s;
 }
 #myBtn:hover {
@@ -137,4 +253,22 @@ html {
 .button_all_white:hover{
   text-decoration: none;
   color:black;
+}
+.display-3{
+  font-size: 5rem;
+}
+@media (min-width:600px) and (max-width:850px){
+  .display-3{
+    font-size: 3rem;
+  }
+}
+@media (min-width:400px) and (max-width:600px){
+  .display-3{
+    font-size: 2.5rem;
+  }
+}
+@media (min-width:200px) and (max-width:400px){
+  .display-3{
+    font-size: 2rem;
+  }
 }
