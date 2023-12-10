@@ -18,6 +18,7 @@
                                 <div class="form-group">
                                     <label for="email">Email</label>
                                     <input
+                                        placeholder="Enter your email"
                                         type="email"
                                         class="form-control"
                                         name="username"
@@ -26,14 +27,14 @@
                                 <div class="form-group">
                                     <label for="password">Password</label>
                                     <input
-                                        placeholder="minimum 8 length with atleast 1 special ,upper ,lower and a number"
+                                        placeholder="minimum 8 length with at least 1 special ,upper ,lower and a number"
                                         type="password"
                                         class="form-control"
                                         name="password"
                                         minlength="8"
                                         id="user-password"
                                     />
-                                </div>
+                                         </div>
                                 <button
                                     type="submit"
                                     class="button_all_black"
@@ -85,24 +86,107 @@
                 style="width: 80%; height: 70%; color: white; position: relative; left: 5px"
             />
         </a>
-        <script>
-            function validatePassword() {
-                const userPassword = document.getElementById("user-password").value;
-                var regex =
-                    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <script>
+      // Initialize Toastify globally
+      Toastify({
+        position: "toast-top-left",
+        duration: 3000,
+        className: "toastify-library-class",
+        style: {
+              background: "linear-gradient(to right, #4E575F,#343A40)",
+            },
+      });
 
-                if (!regex.test(userPassword)) {
-                    alert(
-                        "Password must have at least 8 characters, including one uppercase letter, one lowercase letter, one number, and one special character."
-                    );
-                    return false;
-                }
+      function validatePassword() {
+        const userPassword = document.getElementById("user-password").value;
+        var regex =
+          /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+        if (!regex.test(userPassword)) {
+          Toastify({
+            text: "Password must have at least 8 characters, including one uppercase letter, one lowercase letter, one number, and one special character.",
+            type: "error",
+            style: {
+              background: "linear-gradient(to right, #4E575F,#343A40)",
+            },
+            duration: 3000,
+          }).showToast();
+          return false;
+        }
+
+        return true; // Return true when password is valid
+      }
+
+      const userRegister = document.getElementById("user-register");
+      userRegister.addEventListener("click", async (e) => {
+        e.preventDefault();
+
+        // Validate password
+        const isPasswordValid = validatePassword();
+
+        if (isPasswordValid) {
+          try {
+            // Send POST request only if the password is valid
+            const formData = JSON.stringify({
+              username: document.querySelector('input[name="username"]').value,
+              password: document.querySelector('input[name="password"]').value,
+            });
+            const response = await fetch("/register", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: formData,
+            });
+
+            if (response.ok) {
+              const data = await response.json();
+              if (data.success) {
+                await Toastify({
+                  text: data.message,
+                  type: "success",
+                }).showToast();
+
+                window.location.href = "/login"; // Redirect to login page
+                window.alert("Registration successful! Login to continue");
+              } else {
+                Toastify({
+                  text: data.message,
+                  type: "error",
+                  style: {
+              background: "linear-gradient(to right, #4E575F,#343A40)",
+            },
+                }).showToast();
+              }
+            } else {
+              console.error("Server error:", response.statusText);
+              Toastify({
+                text: "Error! Please try again later",
+                type: "error",
+                style: {
+              background: "linear-gradient(to right, #4E575F,#343A40)",
+            },
+              }).showToast();
             }
-            const userRegister = document.getElementById("user-register");
-            // console.log(userPassword);
-            userRegister.addEventListener("click", validatePassword);
-            
-        </script>
+          } catch (error) {
+            console.error(error);
+            Toastify({
+              text: "Error! Please try again later",
+              type: "error",
+              style: {
+              background: "linear-gradient(to right, #4E575F,#343A40)",
+            },
+            }).showToast();
+          }
+        }
+      });
+    </script>
         <%- include('partials/footer') %>
     </body>
 </html>
