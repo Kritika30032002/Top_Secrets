@@ -1,74 +1,144 @@
 <%- include('partials/header') %>
-<div 
-            class="container mt-5"
-            style="margin-bottom: 197px"
-        >
-            <h1>Login</h1>
+<div class="container mt-5" style="margin-bottom: 197px">
+  <h1>Login</h1>
 
-            <div class="row">
-                <div class="col-sm-8">
-                    <div class="card">
-                        <div class="card-body">
-                            <!-- Makes POST request to /login route -->
-                            <form
-                                action="/login"
-                                method="POST"
-                            >
-                                <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input
-                                        type="email"
-                                        class="form-control"
-                                        name="username"
-                                    />
-                                </div>
-                                <div class="form-group">
-                                    <label for="password">Password</label>
-                                    <input
-                                        type="password"
-                                        class="form-control"
-                                        name="password"
-                                    />
-                                </div>
-                                <button
-                                    type="submit"
-                                    class="button_all_black"
-                                    role="button"
-                                >
-                                    Login
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="card social-block">
-                        <div class="card-body">
-                            <a
-                                class="btn btn-block btn-social btn-google"
-                                href="/auth/google"
-                                role="button"
-                            >
-                                <i class="fab fa-google"></i>
-                                Sign Up with Google
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="card social-block">
-                        <div class="card-body">
-                            <a
-                                class="btn btn-block btn-social btn-facebook"
-                                href="/auth/facebook"
-                                role="button"
-                            >
-                                <i class="fab fa-facebook"></i>
-                                Sign Up with Facebook
-                            </a>
-                        </div>
-                    </div>
-                </div>
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-body">
+          <!-- Makes POST request to /login route -->
+          <form action="/login" method="POST">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                name="username"
+                id="username"
+              />
             </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                name="password"
+                id="password"
+              />
+            </div>
+            <button
+              type="submit"
+              class="button_all_black"
+              role="button"
+              id="user-login"
+            >
+              Login
+            </button>
+          </form>
         </div>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="card social-block">
+        <div class="card-body">
+          <a
+            class="btn btn-block btn-social btn-google"
+            href="/auth/google"
+            role="button"
+          >
+            <i class="fab fa-google"></i>
+            Sign Up with Google
+          </a>
+        </div>
+      </div>
+
+      <div class="card social-block">
+        <div class="card-body">
+          <a
+            class="btn btn-block btn-social btn-facebook"
+            href="/auth/facebook"
+            role="button"
+          >
+            <i class="fab fa-facebook"></i>
+            Sign Up with Facebook
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+/>
+<script>
+  // Initialize Toastify globally
+  Toastify({
+    position: "toast-top-left",
+    duration: 3000,
+    className: "toastify-library-class",
+    style: {
+      background: "linear-gradient(to right, #4E575F,#343A40)",
+    },
+  });
+
+  const userLogin = document.getElementById("user-login");
+  userLogin.addEventListener("click", async (e) => {
+    e.preventDefault();
+
+    try {
+      const formData = JSON.stringify({
+        username: document.querySelector('input[name="username"]').value,
+        password: document.querySelector('input[name="password"]').value,
+      });
+      const response = await fetch("/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: formData,
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        if (data.success) {
+           Toastify({
+            text: data.message,
+            type: "success",
+          }).showToast();
+          window.location.href = "/secrets"; // Redirect to secrets page
+          window.alert("Login successful");
+        } else {
+          Toastify({
+            text: data.message,
+            type: "error",
+            style: {
+              background: "linear-gradient(to right, #4E575F,#343A40)",
+            },
+          }).showToast();
+        }
+      } else {
+        console.error("Server error:", response.statusText);
+        Toastify({
+          text: "Error! Please try again later",
+          type: "error",
+          style: {
+            background: "linear-gradient(to right, #4E575F,#343A40)",
+          },
+        }).showToast();
+      }
+    } catch (error) {
+      Toastify({
+        text: "Error! Please try again later",
+        type: "error",
+        style: {
+          background: "linear-gradient(to right, #4E575F,#343A40)",
+        },
+      }).showToast();
+    }
+  });
+</script>
 <%- include('partials/footer') %>

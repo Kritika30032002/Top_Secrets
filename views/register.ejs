@@ -76,11 +76,6 @@
                 </div>
             </div>
         </div>       
-        <script>
-            function validatePassword() {
-                const userPassword = document.getElementById("user-password").value;
-                var regex =
-                    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
         <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <link
       rel="stylesheet"
@@ -169,7 +164,6 @@
               }).showToast();
             }
           } catch (error) {
-            console.error(error);
             Toastify({
               text: "Error! Please try again later",
               type: "error",

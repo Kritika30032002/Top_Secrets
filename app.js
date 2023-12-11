@@ -132,23 +132,40 @@ app.post("/register", function (req, res) {
     function (err, user) {
       if (err) {
         console.log(err);
-        res.send({ success: false, message: err.message })
+        res.send({ success: false, message: err.message });
       } else {
         passport.authenticate("local")(req, res, function () {
-          res.send({ success: true, message: "Registration Successful, Login to continue"})
+          res.send({
+            success: true,
+            message: "Registration Successful, Login to continue",
+          });
         });
       }
     }
   );
 });
 
-app.post(
-  "/login",
-  passport.authenticate("local", {
-    successRedirect: "/secrets",
-    failureRedirect: "/login",
-  })
-);
+app.post("/login", function (req, res, next) {
+  passport.authenticate("local", function (err, user, info) {
+    // Check for errors during authentication
+    if (err) {
+      return next(err);
+    }
+    // Check if authentication failed
+    if (!user) {
+      // Send success-fail-message, further raise toast notifications
+      res.send({ success: false, message: info.message });
+    }
+    // If authentication succeeded, log in the user
+    req.logIn(user, function (err) {
+      if (err) {
+        return next(err);
+      }
+      // Send success-true-message, further redirects to secrets page
+      res.send({ success: true, message: "Login Successful!" });
+    });
+  })(req, res, next);
+});
 
 app.get("/secrets", function (req, res) {
   User.find({ secret: { $ne: null } }, function (err, foundUsers) {
