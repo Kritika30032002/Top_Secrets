@@ -132,10 +132,13 @@ app.post("/register", function (req, res) {
     function (err, user) {
       if (err) {
         console.log(err);
-        res.send({ success: false, message: err.message })
+        res.send({ success: false, message: err.message });
       } else {
         passport.authenticate("local")(req, res, function () {
-          res.send({ success: true, message: "Registration Successful, Login to continue"})
+          res.send({
+            success: true,
+            message: "Registration Successful, Login to continue",
+          });
         });
       }
     }

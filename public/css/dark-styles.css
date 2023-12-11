@@ -1,5 +1,6 @@
-body.dark {
-  background-color: #0f0e0e;
+body.dark,
+html.dark {
+  background-color: #3f1b52;
   color: white;
 }
 #theme-toggle.dark {
@@ -10,27 +11,37 @@ body.dark {
   background-color: #0e0d0d !important;
   color: white !important;
 }
-.jumbotron.dark {
-  color: white !important;
-  background: #005d4c; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #212a51,
-    #00735e
-  ) !important; /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #212a51,
-    #00735e
-  ) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.hero.dark,
+.hero .main-content h1.dark {
+  color: #f6c4ff !important;
 }
-
 .about-title.dark {
   color: white !important;
 }
-
-.card-body.dark {
-  background-color: #302930 !important;
-  outline: none !important;
-  border: none !important;
+.login-container.dark,
+.register-container.dark {
+  background-color: rgba(255, 255, 255, 0.105);
+}
+button.dark {
+  background-color: #f6c4ff;
+  color: #3f1b52;
+}
+button.secondary.dark {
+  color: #f6c4ff;
+  outline-color: #f6c4ff;
+  background-color: #3f1b52;
+}
+#about.dark {
+  background-color: #610d4a !important;
+  color: white !important;
+}
+.secrets-container.dark {
+  background-color: #3f1b52 !important;
+  color: #f6c4ff;
+}
+#nav_small.side_nav.dark {
+  background-color: #f6c4ff;
+}
+#nav_small.side_nav a.dark {
+  color: #3f1b52 !important;
 }
