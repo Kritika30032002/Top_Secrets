@@ -138,7 +138,7 @@ header h1 {
 }
 .hero .main-content h1 {
   font-size: clamp(2rem, 7vw, 4rem);
-  color: #460967;
+  color: #0b0967;
 }
 .hero .main-content .highlight {
   color: var(--accent-clr);
@@ -191,7 +191,7 @@ header h1 {
 .about-title {
   font-size: 3rem;
   font-weight: 700;
-  color: #3f1b52;
+  color: #1b1c52;
   padding-left: 1ch;
   border-left: 15px solid currentColor;
   border-radius: 10px;
