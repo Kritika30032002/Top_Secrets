@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Secrets</title>
     <link rel="icon" type="image/x-icon" href="image/key.ico" />
     <link
@@ -24,11 +24,7 @@
 
   <body oncanplay="toggle_nav_body()">
     <nav class="navbar navbar-dark bg-dark justify-content-between" id="navbar">
-      <a
-        href="/"
-        class="navbar-brand"
-        style="color: white; cursor: pointer; margin-left: 1em"
-      >
+      <a href="/" class="navbar-brand">
         <i class="fas fa-key fa-1.5x logo" style="color: white"></i>
         Secrets</a
       >
@@ -37,58 +33,18 @@
           <i class="fas fa-sun" style="display: none"></i>
           <i class="fas fa-moon"></i>
         </button>
-        <a
-          href="/"
-          class="btn my-2 my-sm-0 home"
-          type="submit"
-          style="
-            color: black;
-            border: none;
-            background-color: white;
-            margin-right: 1em;
-          "
-        >
-          Home
-        </a>
-        <a
-          href="/about"
-          class="btn my-2 my-sm-0 about"
-          type="submit"
-          style="
-            color: black;
-            border: none;
-            background-color: white;
-            margin-right: 1em;
-          "
-        >
-          About
-        </a>
-        <a
-          href="/register"
-          class="btn my-1 my-sm-0 register"
-          type="submit"
-          style="
-            color: black;
-            border: none;
-            background-color: white;
-            margin-right: 1em;
-          "
-        >
-          Register
-        </a>
-        <a
-          href="/login"
-          class="btn my-2 my-sm-0 login"
-          type="submit"
-          style="
-            color: black;
-            border: none;
-            background-color: white;
-            margin-right: 1em;
-          "
-        >
-          Login
-        </a>
+        <div class="nav_big">
+          <a href="/" class="btn my-2 my-sm-0 home" type="submit"> Home </a>
+          <a href="/about" class="btn my-2 my-sm-0 about" type="submit">
+            About
+          </a>
+          <a href="/register" class="btn my-1 my-sm-0 register" type="submit">
+            Register
+          </a>
+          <a href="/login" class="btn my-2 my-sm-0 login" type="submit">
+            Login
+          </a>
+        </div>
         <div class="hamburger" onclick="toggle_nav()">
           <i class="fa fa-bars"></i>
         </div>
@@ -114,72 +70,5 @@
         </a>
       </div>
     </div>
-    <script>
-      function toggle_nav(){
-        let naV=document.getElementById("nav_small");
-        let Nav=document.getElementById("nav_small2");
-        if(naV.classList.contains("side_nav") && Nav.classList.contains("content")){
-          naV.classList.remove("side_nav");
-          naV.classList.add("hide");
-          Nav.classList.remove("content");
-          Nav.classList.add("hide");
-        }else{
-            naV.classList.remove("hide");
-            naV.classList.add("side_nav");
-            Nav.classList.remove("hide");
-          Nav.classList.add("content");
-        }
-      }
-      function toggle_nav_body(){
-        let naV=document.getElementById("nav_small");
-        if(naV.classList.contains("side_nav")){
-          naV.classList.remove("side_nav");
-          naV.classList.add("hide");
-        }
-      }
-      function toggleTheme() {
-        document.querySelectorAll("*").forEach((el) => {
-          el.classList.toggle("dark");
-        });
-        // changing the icon inside the theme toggle button
-        if (localStorage.getItem("theme") === "light") {
-          document.querySelector("#theme-toggle .fa-sun").style.display =
-            "none";
-          document.querySelector("#theme-toggle .fa-moon").style.display =
-            "inline-block";
-        } else {
-          document.querySelector("#theme-toggle .fa-sun").style.display =
-            "inline-block";
-          document.querySelector("#theme-toggle .fa-moon").style.display =
-            "none";
-        }
-      }
-
-      if (!localStorage.getItem("theme")) {
-        // if theme is not already set on localstorage
-        if (
-          window.matchMedia &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches
-        ) {
-          // dark mode preferred by user as per os settings
-          localStorage.setItem("theme", "dark");
-        } else {
-          localStorage.setItem("theme", "light");
-        }
-      }
-      window.onload = function () {
-        if (localStorage.getItem("theme") === "dark") {
-          toggleTheme();
-        }
-      };
-      document.getElementById("theme-toggle").addEventListener("click", (e) => {
-        e.preventDefault();
-        localStorage.setItem(
-          "theme",
-          localStorage.getItem("theme") === "light" ? "dark" : "light"
-        );
-        toggleTheme();
-      });
-    </script>
   </body>
 </html>

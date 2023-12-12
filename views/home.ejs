@@ -1,18 +1,27 @@
 <%- include('partials/header') %>
 
-  <div style="background: #74ebd5;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #ACB6E5, #74ebd5);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #ACB6E5, #74ebd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-" class="jumbotron centered">
-    <div class="container">
-      <i class="fas fa-key fa-6x"></i>
-      <h1 class="display-3">Secrets</h1>
-      <p class="lead">Don't keep your secrets, share them anonymously!</p>
-      <hr />
-      <div class="d-flex justify-content-center">
-        <a class="button_all_white" href="/register" role="button">Register</a>
-        <a class="button_all_black" href="/login" role="button">Login</a>
-      </div>
+<div class="flexbox hero">
+  <div class="flexbox container">
+    <div class="main-content">
+      <h1>Don't Keep Your Secrets,</h1>
+      <h1 class="display-3">Share Them Anonymously!</h1>
+    </div>
+
+    <div class="flexbox buttons-container" style="opacity: 0">
+      <a href="/register" role="button"
+        ><button class="secondary">Register</button></a
+      >
+      <a href="/login" role="button"><button>Login</button></a>
     </div>
   </div>
-  <%- include('partials/footer') %>
+  <div class="illustration">
+    <i class="fas fa-key fa-6x"></i>
+  </div>
+</div>
+<section id="about" class="flexbox">
+  <p>
+    We allow you to add your secrets that you don't want to share with anyone.
+  </p>
+  <a href="/about"><button>Know More</button></a>
+</section>
+<%- include('partials/footer') %>
