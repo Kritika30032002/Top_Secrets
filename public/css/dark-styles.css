@@ -1,6 +1,6 @@
 body.dark,
 html.dark {
-  background-color: #19214e;
+  background-color: #192e4e;
   color: white;
 }
 #theme-toggle.dark {
@@ -13,7 +13,7 @@ html.dark {
 }
 .hero.dark,
 .hero .main-content h1.dark {
-  color: #a7b8ff !important;
+  color: #a7daff !important;
 }
 .about-title.dark {
   color: white !important;
@@ -23,25 +23,25 @@ html.dark {
   background-color: rgba(255, 255, 255, 0.105);
 }
 button.dark {
-  background-color: #a7b8ff;
-  color: #19214e;
+  background-color: #a7daff;
+  color: #192e4e;
 }
 button.secondary.dark {
-  color: #a7b8ff;
-  outline-color: #a7b8ff;
-  background-color: #19214e;
+  color: #a7daff;
+  outline-color: #a7daff;
+  background-color: #192e4e;
 }
 #about.dark {
   background-color: #093c7e !important;
   color: white !important;
 }
 .secrets-container.dark {
-  background-color: #19214e !important;
-  color: #a7b8ff;
+  background-color: #192e4e !important;
+  color: #a7daff;
 }
 #nav_small.side_nav.dark {
-  background-color: #a7b8ff;
+  background-color: #a7daff;
 }
 #nav_small.side_nav a.dark {
-  color: #19214e !important;
+  color: #192e4e !important;
 }
