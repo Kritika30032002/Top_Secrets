@@ -1,7 +1,7 @@
 <%- include('partials/header') %>
 
         <div 
-            class="container mt-5"
+            class="register-container container mt-5"
             style="margin-bottom: 197px"
         >
             <h1>Register</h1>
@@ -97,7 +97,7 @@
         const userPassword = document.getElementById("user-password").value;
         var regex =
           /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-
+        
         if (!regex.test(userPassword)) {
           Toastify({
             text: "Password must have at least 8 characters, including one uppercase letter, one lowercase letter, one number, and one special character.",
