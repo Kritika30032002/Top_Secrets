@@ -1,0 +1,248 @@
+/* CONTACT FORM CSS */
+.contact-form{
+    display: grid;
+    height: fit-content;
+    width: 60vw;
+    background-color: white;
+    margin:60px auto 30px auto;
+    box-shadow: 1px 1px 3px 2px grey,
+                1px 1px 3px 2px grey;
+    grid-template-rows: 1fr auto;
+    border-radius: 5px;
+    margin-bottom:100px;
+    
+  }
+  @media only screen and (min-width:800px){
+    .contact-form {
+        width:60vw;
+        height: 60%;
+        margin-bottom:100px;
+    }
+  }
+  @media only screen and (max-width:540px){
+    .contact-form {
+        width:80vw;
+        margin-bottom:100px;
+    }
+  }
+  .getintouch{
+    display: flex;
+    justify-content: center;
+    margin-top:2%;
+    height:fit-content;
+  }
+  .getintouch h2{
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 10px;
+  }
+  .details{
+    display: grid;
+    grid-template-rows: 0.6fr 1fr;
+    margin-top:2%;
+  }
+  @media only screen and (min-width:800px){
+    .details{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows:1fr;
+        height: fit-content;
+        margin-top:2%;
+    }
+  }
+  .message{
+    display: flex;
+    flex-direction: column;
+    padding:5px;
+  }
+  .leave{
+    margin-left: 3%;
+    height:40px;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .leave p{
+    font-weight: 500;
+    font-size: 20px;
+    color:black;
+  }
+  input{
+    border-radius: 5px;
+    transition: all 0.6s ease;
+    margin:5% 2%;
+    border: none;
+    border-bottom: 1px solid black;
+    border-radius: 0px;
+  }
+  input:focus{
+    outline:none;
+    border-bottom: 1px solid #343A40;
+  }
+  input:focus::placeholder{
+    transition: all 0.4s ease;
+    color: transparent;
+  }
+  textarea{
+    margin-left: 2%;
+    border-radius: 5px;
+    transition: all 0.6s ease;
+    margin:4% 2%;
+    border: none;
+    border-bottom: 1px solid black;
+    resize: none;
+    border-radius: 0px;
+  }
+  textarea:focus{
+    outline:none;
+    border-bottom: 1px solid #343A40;
+    border-radius: 0px;
+  }
+  textarea:focus::placeholder{
+    transition: all 0.4s ease;
+    color: transparent;
+  }
+  .message button{
+    width:90%;
+    font-size: 1.5rem;
+    height: 3rem;
+    border:none;
+    margin: 4% auto;
+    border-radius: 5px;
+    background-color: #343A40;
+    color:white;
+    transform: scale(1);
+    transition: all 0.3s ease;
+  }
+  @media only screen and (min-width : 800px) {
+    .message button{
+        height:3rem;
+    }
+  }
+  .message button:hover{
+    transform: scale(1.1);
+    background-color:black ;
+    cursor: pointer;
+  }
+  .address{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding:5px;
+  }
+  @media only screen and (max-width : 800px) {
+    .address{
+        margin-top:0% 5%;
+    }
+  }
+  .social-media{
+    font-size: 20px;
+    color:black;
+    margin:2%;
+    margin-top:0px;
+    width: 100%;
+  }
+  .social-media i{
+    margin:1%;
+  }
+  .iit-address{
+    display: inline-block;
+    text-align: start;
+    color:black;
+  }
+  .iit-address i{
+    margin:1% 2% 1% 3%;
+    color: black;
+    font-size:20px;
+  }
+  .contact{
+    display: inline-block;
+    text-align: start;
+    color:black;
+  }
+  .contact i{
+    margin:1% 2% 1% 3%;
+    color: black;
+    font-size:20px;
+  }
+  .email{
+    display: inline-block;
+    text-align: start;
+    color:black;
+  }
+  
+  .email i{
+    margin:1% 2% 1% 3%;
+    color: black;
+    font-size:20px;
+  }
+  .location_div{
+    display: flex;
+    width: 100%;
+    height: 90%;
+    align-items: center;
+    justify-content: center;
+  }
+  .location-img{
+    width:100%;
+    height: 100%;
+  }
+  @media only screen and (min-width:800px){
+    .location-img{
+        width:100%;
+        height: 90%;
+    }
+  }
+  .contact-footer{
+    background-color: #4A99D3;
+    color:white;
+    margin-bottom: 0;
+  }
+  .contact-footer a{
+    color:white;
+  }
+  .copyright{
+    background-color: #4A99D3;
+    color:white;
+  }
+  a{
+    text-decoration: none;
+  }
+  .last input{
+    height:3rem;
+    border-radius: 5px;
+    width:20rem;
+  }
+  .last button{
+    height:3rem;
+    border-radius: 3px;
+    background-color: white;
+    border:none;
+    color:#4A99D3;
+    transition:all 0.4s ease;
+  }
+  .last button:hover{
+    color:white;
+    background-color:#82bee8;
+  }
+  .fa-facebook:hover{
+    color:#0165E1;
+  }
+  .fa-youtube:hover{
+    color:#FF0000;
+  }
+  .fa-instagram:hover{
+    color:#f00a8c;
+  }
+  .fa-twitter:hover{
+    color:#1DA1F2;
+  }
+  .fa-linkedin:hover{
+    color:#0A66C2;
+  }
+  .fa-google:hover{
+    color:rgb(159, 72, 37);
+  }
+  .contact-footer a:hover{
+    color:#acd5f3;
+    cursor: pointer;
+  }

@@ -36,7 +36,7 @@ html {
 .hamburger{
   display: none;
 }
-@media screen and (max-width:400px) {
+@media screen and (max-width:500px) {
   .hamburger{
     display: block;
     color:#343A40;
@@ -46,7 +46,7 @@ html {
     border-radius: 2px;
   }
 }
-@media screen and (max-width:400px) {
+@media screen and (max-width:500px) {
   .form-inline a{
     display: none;
   }
@@ -54,7 +54,7 @@ html {
 .side_nav{
   display: none;
 }
-@media (max-width:400px){
+@media (max-width:500px){
   .side_nav{
     height: fit-content;
     width:100vw;
@@ -74,7 +74,7 @@ html {
     border-radius:0px;
     border: 1px solid black;
   }
-  @media (min-width:200px) and (max-width:400px){
+  @media (min-width:200px) and (max-width:500px){
     .side_nav .content a{
       margin:0px!important;
     }

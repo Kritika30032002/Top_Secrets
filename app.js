@@ -29,7 +29,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-//mongoose.connect("mongodb://127.0.0.1:27017/userDB");
+// mongoose.connect("mongodb://127.0.0.1:27017/userDB");
 
 const userSchema = new mongoose.Schema({
   username: String,
@@ -119,6 +119,10 @@ app.get("/login", function (req, res) {
 
 app.get("/about", function (req, res) {
   res.render("about");
+});
+
+app.get("/contact", function (req, res) {
+  res.render("contact");
 });
 
 app.get("/register", function (req, res) {
