@@ -296,6 +296,12 @@ input {
     align-items: center;
     width: 100%;
   }
+  button{
+    font-size: 0.9em;
+  }
+  .tagline{
+    font-size: 0.6rem;
+  }
 }
 
 @keyframes wipe-in {
