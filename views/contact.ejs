@@ -10,16 +10,11 @@
             </div>
             <form method="post" class="message">
                 <input type="text" class="form-control" id="NAME" name="name" placeholder="Name" required  />
-                <input type="email" class="form-control" id="EMAIL" name="name" placeholder="Email Address" required />
-                <textarea type="text" class="form-control" id="subject" name="subject" placeholder="Your Message...." required></textarea>
-                <button type="button" id="send_button">Send</button>
+                <input type="email" class="form-control" id="EMAIL" name="email" placeholder="Email Address" required />
+                <input type="text" class="form-control" id="SUBJECT" name="subject" placeholder="Subject" required />
+                <textarea type="text" class="form-control" id="TEXT" name="text" placeholder="Your Message...." required></textarea>
+                <button type="button" style="margin-left: 0.4rem;" id="send_button">Send</button>
             </form>
-        </div>
-        <div class="address">
-            <div class="location_div">
-                <iframe style="color: aqua;" class="location-img" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14019.017579836976!2d77.18105919413148!3d28.547101111379686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1df6b9055fb5%3A0x81c10b266b1ea3c0!2sIndian%20Institute%20Of%20Technology%20Delhi%20(IIT%20Delhi)!5e0!3m2!1sen!2sin!4v1702368071372!5m2!1sen!2sin" style="border:0px; box-shadow: 1px 1px 3px 2px grey,
-                1px 1px 3px 2px grey;"  allowfullscreen="false" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
         </div>
     </div>
 </div>
@@ -30,16 +25,17 @@
     btn.addEventListener('click', function(e){
         var name=document.getElementById("NAME").value;
         var email=document.getElementById("EMAIL").value;
-        var subject=document.getElementById("subject").value;
+        var subject=document.getElementById("SUBJECT").value;
+        var text=document.getElementById("TEXT").value;
         e.preventDefault();
             Email.send({
             Host : "smtp.elasticemail.com",
-            Username : "vivekkr694@gmail.com",
-            Password : "1A3F58F4591CE14F3B8093F7F2E8C6668F97",
-            To : 'vikramkr1729@gmail.com',
+            Username : "username_smtp",
+            Password : "generate_from_smtp_server",
+            To : 'your_email',
             From : `${email}`,
-            Subject : `Name: ${name}`,
-            Body : `<strong>SUBJECT:</strong> <br><br> ${subject} <br><br> <strong>Name:<\strong> ${name} <br> <strong>Email:<\strong> ${email}`
+            Subject : `${subject}`,
+            Body : `<br>${text} <br><br> Name: ${name} <br> Email: ${email}`
         }).then(
             async message => {
                 if (message=="OK"){
