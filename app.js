@@ -121,6 +121,10 @@ app.get("/about", function (req, res) {
   res.render("about");
 });
 
+app.get("/contact", function (req, res) {
+  res.render("contact.ejs");
+});
+
 app.get("/register", function (req, res) {
   res.render("register");
 });
@@ -218,7 +222,7 @@ app.listen(process.env.PORT, () => {
       console.log("Database connected successfully");
     })
     .catch((error) => {
-      console.log("DB connection failed", error);
+      console.log("DB connection failed", process.env.MONGO_SERVER);
     });
   console.log(`Server is running on ${process.env.port}`);
 });

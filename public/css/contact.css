@@ -1,0 +1,112 @@
+/* CONTACT FORM CSS */
+.contact-form{
+    display: grid;
+    height: fit-content;
+    width: 60vw;
+    background-color: #D1ECFF;
+    margin:60px auto 30px auto;
+    box-shadow: 1px 1px 3px 2px grey,
+                1px 1px 3px 2px grey;
+    grid-template-rows: 1fr auto;
+    border-radius: 5px;
+    margin-bottom:100px;
+    
+  }
+  @media only screen and (min-width:800px){
+    .contact-form {
+        width:60vw;
+        height: fit-content;
+        margin-bottom:100px;
+    }
+  }
+  @media only screen and (max-width:540px){
+    .contact-form {
+        width:80vw;
+        margin-bottom:100px;
+    }
+  }
+  .getintouch{
+    display: flex;
+    justify-content: center;
+    margin-top:2%;
+    height:fit-content;
+  }
+  .getintouch h2{
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 10px;
+    font-family:poppins;
+  }
+  .details{
+    display: grid;
+    grid-template-rows: 0.6fr 1fr;
+    margin-top:2%;
+  }
+  @media only screen and (min-width:800px){
+    .details{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows:1fr;
+        height: fit-content;
+        margin-top:2%;
+    }
+  }
+  .message{
+    display: flex;
+    flex-direction: column;
+    padding:5px;
+  }
+  .leave{
+    margin-left: 3%;
+    height:40px;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .leave p{
+    font-weight: 500;
+    font-size: 20px;
+    color:black;
+  }
+  .message input{
+    padding: 0.5em!important;
+    margin:5px;
+  }
+  textarea{
+    padding: 0.5em!important;
+    margin:5px;
+    border-radius: 10px !important;
+    resize: none;
+  }
+  .address{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    align-items: center;
+    padding:5px;
+  }
+  @media only screen and (max-width : 800px) {
+    .address{
+        margin-top:0% 5%;
+    }
+  }
+  .location_div{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .location-img{
+    width:100%;
+    height: 100%;
+  }
+  @media only screen and (min-width:800px){
+    .location-img{
+        width:100%;
+        height: 100%;
+    }
+  }
+  a{
+    text-decoration: none;
+  }
