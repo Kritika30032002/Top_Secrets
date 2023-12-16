@@ -1,0 +1,82 @@
+/* CONTACT FORM CSS */
+.contact-form{
+    display: grid;
+    height: fit-content;
+    width: 60vw;
+    background-color: #D1ECFF;
+    margin:60px auto 30px auto;
+    box-shadow: 1px 1px 3px 2px grey,
+                1px 1px 3px 2px grey;
+    grid-template-rows: 1fr auto;
+    border-radius: 5px;
+    margin-bottom:100px;
+    
+  }
+  @media only screen and (min-width:800px){
+    .contact-form {
+        width:60vw;
+        height: fit-content;
+        margin-bottom:100px;
+    }
+  }
+  @media only screen and (max-width:540px){
+    .contact-form {
+        width:80vw;
+        margin-bottom:100px;
+    }
+  }
+  .getintouch{
+    display: flex;
+    justify-content: center;
+    margin-top:2%;
+    height:fit-content;
+  }
+  .getintouch h2{
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 10px;
+    font-family:poppins;
+  }
+  .details{
+    display: grid;
+    grid-template-rows: 1fr auto;
+    margin-top:2%;
+  }
+  @media only screen and (min-width:800px){
+    .details{
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows:1fr;
+        height: fit-content;
+        margin-top:2%;
+    }
+  }
+  .message{
+    display: flex;
+    flex-direction: column;
+    padding:5px 5px 5px 2px;
+  }
+  .leave{
+    margin-left: 2%;
+    height:40px;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .leave p{
+    font-weight: 500;
+    font-size: 20px;
+    color:black;
+  }
+  .message input{
+    padding: 0.5em!important;
+    margin:5px;
+  }
+  textarea{
+    padding: 0.5em!important;
+    margin:5px;
+    border-radius: 10px !important;
+    resize: none;
+  }
+  a{
+    text-decoration: none;
+  }

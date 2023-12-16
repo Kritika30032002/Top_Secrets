@@ -1,0 +1,63 @@
+<%- include('partials/header') %>
+<div class="contact-form">
+    <div class="getintouch">
+        <h2 style= "color:black;">Get In Touch</h2>
+    </div>
+    <div class="details">
+        <div class="message">
+            <div class="leave">
+                <p>Leave a Message</p>
+            </div>
+            <form method="post" class="message">
+                <input type="text" class="form-control" id="NAME" name="name" placeholder="Name" required  />
+                <input type="email" class="form-control" id="EMAIL" name="email" placeholder="Email Address" required />
+                <input type="text" class="form-control" id="SUBJECT" name="subject" placeholder="Subject" required />
+                <textarea type="text" class="form-control" id="TEXT" name="text" placeholder="Your Message...." required></textarea>
+                <button type="button" style="margin-left: 0.4rem;" id="send_button">Send</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+    var btn=document.getElementById("send_button");
+    btn.addEventListener('click', function(e){
+        var name=document.getElementById("NAME").value;
+        var email=document.getElementById("EMAIL").value;
+        var subject=document.getElementById("SUBJECT").value;
+        var text=document.getElementById("TEXT").value;
+        e.preventDefault();
+            Email.send({
+            Host : "smtp.elasticemail.com",
+            Username : "username_smtp",
+            Password : "generate_from_smtp_server",
+            To : 'your_email',
+            From : `${email}`,
+            Subject : `${subject}`,
+            Body : `<br>${text} <br><br> Name: ${name} <br> Email: ${email}`
+        }).then(
+            async message => {
+                if (message=="OK"){
+                    await Swal.fire({
+                        title: "Success!",
+                        text: "Message Sent Successfully!",
+                        icon: "success"
+                    });
+                }
+                else{
+                    await Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "Something went wrong!",
+                    });
+                }
+            }
+        ).then(async (res)=> {
+            await window.location.reload()
+        }
+        )
+    })
+    
+</script>
+<%- include('partials/footer') %>
