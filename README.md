@@ -12,7 +12,7 @@
 ## 🖼️ Demo Video of Website
 [screen-capture.webm](https://user-images.githubusercontent.com/83400697/204582783-e3def69a-61f6-4421-972f-34134ec4528b.webm)
 
-## Table of Contents
+## 📖 Table of Contents
 
 - [Technologies](#-technologies)
 - [Project Setup](#-project-setup)
