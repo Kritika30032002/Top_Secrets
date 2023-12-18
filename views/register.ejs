@@ -22,6 +22,7 @@
                                         type="email"
                                         class="form-control"
                                         name="username"
+                                        id="user-email"
                                     />
                                 </div>
                                 <div class="form-group">
@@ -92,13 +93,35 @@
               background: "linear-gradient(to right, #4E575F,#343A40)",
             },
       });
-
-      function validatePassword() {
+      function validateForm(){
+        const email = document.getElementById("user-email").value;
         const userPassword = document.getElementById("user-password").value;
         var regex =
           /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
         
-        if (!regex.test(userPassword)) {
+        if(!email && !userPassword){
+          Toastify({
+            text:"Please fill email and password",
+            type:"error",
+            style: {
+              background: "linear-gradient(to right, #4E575F,#343A40)",
+            },
+            duration:3000,
+          }).showToast();
+          return false;
+        }
+        else if(!email || !userPassword){
+          Toastify({
+            text:"Please fill email/password",
+            type:"error",
+            style: {
+              background: "linear-gradient(to right, #4E575F,#343A40)",
+            },
+            duration:3000,
+          }).showToast();
+          return false;
+        }
+        else if (!regex.test(userPassword)) {
           Toastify({
             text: "Password must have at least 8 characters, including one uppercase letter, one lowercase letter, one number, and one special character.",
             type: "error",
@@ -109,18 +132,17 @@
           }).showToast();
           return false;
         }
-
-        return true; // Return true when password is valid
+        return true;
       }
-
       const userRegister = document.getElementById("user-register");
       userRegister.addEventListener("click", async (e) => {
         e.preventDefault();
 
-        // Validate password
-        const isPasswordValid = validatePassword();
+        // Validate Form
+        const isFormValid = validateForm();
 
-        if (isPasswordValid) {
+        if (isFormValid) 
+        {
           try {
             // Send POST request only if the password is valid
             const formData = JSON.stringify({

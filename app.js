@@ -213,7 +213,7 @@ app.get("/logout", function(req, res) {
 });
 
 // Catch-all route for 404 errors
-app.get('*', (req, res) => {
+app.get("*", (req, res) => {
   // Redirect to a specific URL or send a custom 404 response
 
   res.status(404).render("404-page");
