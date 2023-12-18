@@ -95,9 +95,11 @@
       });
       function validateForm(){
         const email = document.getElementById("user-email").value;
-        const password = document.getElementById("user-password").value;
-
-        if(!email && !password){
+        const userPassword = document.getElementById("user-password").value;
+        var regex =
+          /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        
+        if(!email && !userPassword){
           Toastify({
             text:"Please fill email and password",
             type:"error",
@@ -108,7 +110,7 @@
           }).showToast();
           return false;
         }
-        else if(!email || !password){
+        else if(!email || !userPassword){
           Toastify({
             text:"Please fill email/password",
             type:"error",
@@ -119,14 +121,7 @@
           }).showToast();
           return false;
         }
-        return true;
-      }
-      function validatePassword() {
-        const userPassword = document.getElementById("user-password").value;
-        var regex =
-          /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-        
-        if (!regex.test(userPassword)) {
+        else if (!regex.test(userPassword)) {
           Toastify({
             text: "Password must have at least 8 characters, including one uppercase letter, one lowercase letter, one number, and one special character.",
             type: "error",
@@ -137,19 +132,16 @@
           }).showToast();
           return false;
         }
-
-        return true; // Return true when password is valid
+        return true;
       }
-
       const userRegister = document.getElementById("user-register");
       userRegister.addEventListener("click", async (e) => {
         e.preventDefault();
 
-        // Validate password
+        // Validate Form
         const isFormValid = validateForm();
-        const isPasswordValid = validatePassword();
 
-        if (isFormValid && isPasswordValid) 
+        if (isFormValid) 
         {
           try {
             // Send POST request only if the password is valid
