@@ -212,6 +212,13 @@ app.get("/logout", function (req, res) {
   res.redirect("/");
 });
 
+// Catch-all route for 404 errors
+app.get('*', (req, res) => {
+  // Redirect to a specific URL or send a custom 404 response
+
+  res.status(404).render("404-page");
+});
+
 app.listen(process.env.PORT, () => {
   mongoose
     .connect(process.env.MONGO_SERVER, {
@@ -224,5 +231,5 @@ app.listen(process.env.PORT, () => {
     .catch((error) => {
       console.log("DB connection failed", process.env.MONGO_SERVER);
     });
-  console.log(`Server is running on ${process.env.port}`);
+  console.log(`Server is running on ${process.env.PORT}`);
 });
