@@ -14,11 +14,16 @@
 
 ## Table of Contents
 
-- [Technologies](#technologies)
-- [Project Setup](#project-setup)
-- [Contributing](#contributing)
-- [Thanks to all contributors](#thanks-to-all-contributors)
-- [License](#license)
+- [Technologies](#-technologies)
+- [Project Setup](#-project-setup)
+- [Contributing](#-contributing)
+   - [How to Get Started with Open Source](#-how-to-get-started-with-open-source)
+   - [Things to do After Making a Change](#-after-making-a-change)
+   - [Rules](#-rules)
+   - [Reporting a Bug or Discussing a Feature Idea](#-reporting-a-bug-or-discussing-a-feature-idea)
+   - [Fixing a Bug or Implement a new Feature](#-fixing-a-bug-or-implementing-a-new-feature)
+- [Thanks to all contributors](#-thanks-to-all-contributors)
+- [License](#-license)
 
  ## 🧰 Technologies
 
@@ -139,7 +144,7 @@ git push
 - **No `console.log`s in any file**: We use the `debug` module across the codebase to log debugging information in development only. Never commit a file that contains a `console.log` as CI will fail your build. The only exceptions are errors, which you can log, but you have to use `console.error` to be explicit about it
 - **Code reviews**: All submissions, including submissions by project members, require review. We use GitHub pull requests for this purpose.
 
-### 🕵️ Reporting a bug or discussing a feature idea
+### 🕵 Reporting a bug or discussing a feature idea
 
 If you found a technical bug on the website or have ideas for features we should implement, the issue tracker is the best place to share your ideas.  ([click here to open a new issue](https://github.com/Kritika30032002/Top_Secrets/issues))
 
@@ -158,4 +163,3 @@ Also Give it a Star 🌟, If you loved contributing to the project.
 ## 📄 License
 
 MIT License, see the [LICENSE](./LICENSE) file.
-
