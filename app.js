@@ -37,6 +37,7 @@ const userSchema = new mongoose.Schema({
   googleId: String,
   facebookId: String,
   secret: String,
+  backgroundColor: String,
 });
 
 userSchema.plugin(passportLocalMongoose);
@@ -171,8 +172,13 @@ app.post("/login", function(req, res, next) {
   })(req, res, next);
 });
 
+<<<<<<< Updated upstream
 app.get("/secrets", function(req, res) {
   User.find({ secret: { $ne: null } }, function(err, foundUsers) {
+=======
+app.get("/secrets", function (req, res) {
+  User.find({ secret: { $ne: null } }, {secret: 1, backgroundColor: 1}, function (err, foundUsers) {
+>>>>>>> Stashed changes
     if (err) {
       console.log(err);
     } else {
@@ -193,13 +199,23 @@ app.get("/submit-secret-form", function(req, res) {
 
 app.post("/submit-secret-form", function(req, res) {
   const submittedSecret = req.body.secret;
+<<<<<<< Updated upstream
   User.findById(req.user.id, function(err, foundUser) {
+=======
+  const submittedBackgroundColor = req.body.backgroundColor;
+  User.findById(req.user.id, function (err, foundUser) {
+>>>>>>> Stashed changes
     if (err) {
       console.log(err);
     } else {
       if (foundUser) {
         foundUser.secret = submittedSecret;
+<<<<<<< Updated upstream
         foundUser.save(function() {
+=======
+        foundUser.backgroundColor = submittedBackgroundColor;
+        foundUser.save(function () {
+>>>>>>> Stashed changes
           res.redirect("/secrets");
         });
       }
