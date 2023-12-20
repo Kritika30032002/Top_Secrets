@@ -42,7 +42,7 @@ const userSchema = new mongoose.Schema({
 userSchema.plugin(passportLocalMongoose);
 userSchema.plugin(findOrCreate);
 
-const User = mongoose.model("User", userSchema);  
+const User = mongoose.model("User", userSchema);
 
 passport.use(User.createStrategy());
 
@@ -63,9 +63,30 @@ passport.use(
       clientSecret: process.env.GOOGLE_SECRET,
       callbackURL: `${process.env.PUBLIC_BASENAME}auth/google/secrets`,
     },
-    function(accessToken, refreshToken, profile, cb) {
-      User.findOrCreate({ googleId: profile.id }, function(err, user) {
-        return cb(err, user);
+    function (accessToken, refreshToken, profile, cb) {
+      User.findOne({ googleId: profile.id }, (err, existingUser) => {
+        if (err) {
+          return cb(err);
+        }
+
+        if (existingUser) {
+          console.log("User already exists, return the existing user");
+          return cb(null, existingUser);
+        }
+
+        console.log("User does not exist, create a new one")
+        const newUser = new User({ googleId: profile.id, username: profile.displayName });
+        console.log("id" + newUser.googleId);
+        console.log("username" + newUser.username);
+        newUser.save((err, user) => {
+          if (err) {
+            console.error('Error saving new user:', err);
+            return cb(err, null);
+          }
+
+          console.log('New User saved successfully:', user);
+          return cb(null, user);
+        });
       });
     }
   )
@@ -79,8 +100,29 @@ passport.use(
       callbackURL: `${process.env.PUBLIC_BASENAME}auth/google/secrets`,
     },
     function (accessToken, refreshToken, profile, cb) {
-      User.findOrCreate({ facebookId: profile.id }, function (err, user) {
-        return cb(err, user);
+      User.findOne({ facebookId: profile.id }, (err, existingUser) => {
+        if (err) {
+          return cb(err);
+        }
+
+        if (existingUser) {
+          console.log("User already exists, return the existing user");
+          return cb(null, existingUser);
+        }
+
+        console.log("User does not exist, create a new one")
+        const newUser = new User({ facebookId: profile.id, username: profile.displayName });
+        console.log("id" + newUser.facebookId);
+        console.log("username" + newUser.username);
+        newUser.save((err, user) => {
+          if (err) {
+            console.error('Error saving new user:', err);
+            return cb(err, null);
+          }
+
+          console.log('New User saved successfully:', user);
+          return cb(null, user);
+        });
       });
     }
   )
@@ -214,8 +256,14 @@ app.post("/submit-secret-form", function (req, res) {
 });
 
 app.get("/logout", function (req, res) {
-  req.logout();
-  res.redirect("/");
+  req.logout(function(err) {
+    if (err) {
+      console.error('Error during logout:', err);
+      return res.redirect("/"); // Handle errors gracefully, redirect to home or login page
+    }
+
+    res.redirect("/");
+  });
 });
 
 // Catch-all route for 404 errors
