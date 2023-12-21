@@ -9,14 +9,14 @@
        <p class='suggest-subheader'>Get In Touch</p>
        <div class='input-suggest-flexbox' >
        <div style="margin:3vh 4vh">
-       <p class='input-header' id="FNAME">First Name</p>
+       <p class='input-header' id="NAME">Name</p>
          <input class='input-box' style="width:100%; border-radius: none;" type="text" placeholder='John'></input>
      
        </div>
        
        <div style="margin:3vh 4vh">
-       <p class='input-header' id="LNAME">Last Name</p>
-         <input class='input-box' style="width:100%"  type="text" placeholder='Doe'></input>
+       <p class='input-header' id="CONTACT">Contact</p>
+         <input class='input-box' style="width:100%"  type="text" placeholder='9152345677'></input>
      
        </div>
        </div>
@@ -28,8 +28,8 @@
        </div>
        
        <div style="margin:3vh 4vh">
-       <p class='input-header' id="CONTACT">Contact</p>
-         <input class='input-box' style="width:100%"  type="text" placeholder='9152345677'></input>
+       <p class='input-header' id="SUBJECT">Subject</p>
+         <input class='input-box' style="width:100%"  type="text" placeholder='Hey'></input>
      
        </div>
        </div>
@@ -47,8 +47,8 @@
 <script>
     var btn=document.getElementById("send_button");
     btn.addEventListener('click', function(e){
-        var fname=document.getElementById("FNAME").value;
-        var lname=document.getElementById("LNAME").value;
+        var name=document.getElementById("NAME").value;
+        var subject=document.getElementById("SUBJECT").value;
         var email=document.getElementById("EMAIL").value;
         var contact=document.getElementById("CONTACT").value;
         var text=document.getElementById("TEXT").value;
@@ -59,8 +59,8 @@
             Password : "generate_from_smtp_server",
             To : 'your_email',
             From : `${email}`,
-            Contact : `${contact}`,
-            Body : `<br>${text} <br><br> Name: ${fname} ${lname} <br> Email: ${email}`
+            Subject : `${Subject}`,
+            Body : `<br>${text} <br><br> Name: ${name} <br> Email: ${email} <br>Contact:${contact}`
         }).then(
             async message => {
                 if (message=="OK"){
