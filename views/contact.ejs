@@ -1,31 +1,56 @@
 <%- include('partials/header') %>
-<div class="contact-form">
-    <div class="getintouch">
-        <h2 style= "color:black;">Get In Touch</h2>
-    </div>
-    <div class="details">
-        <div class="message">
-            <div class="leave">
-                <p>Leave a Message</p>
-            </div>
-            <form method="post" class="message">
-                <input type="text" class="form-control" id="NAME" name="name" placeholder="Name" required  />
-                <input type="email" class="form-control" id="EMAIL" name="email" placeholder="Email Address" required />
-                <input type="text" class="form-control" id="SUBJECT" name="subject" placeholder="Subject" required />
-                <textarea type="text" class="form-control" id="TEXT" name="text" placeholder="Your Message...." required></textarea>
-                <button type="button" style="margin-left: 0.4rem;" id="send_button">Send</button>
-            </form>
-        </div>
-    </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+<div class="modal-box" >
+    <img class="banner-img-suggest"  src="image/contact2.jpg" ></img> 
+     
+          <div class='modal-div'>
+         
+       <p class='suggest-subheader'>Get In Touch</p>
+       <div class='input-suggest-flexbox' >
+       <div style="margin:3vh 4vh">
+       <p class='input-header' id="FNAME">First Name</p>
+         <input class='input-box' style="width:100%; border-radius: none;" type="text" placeholder='John'></input>
+     
+       </div>
+       
+       <div style="margin:3vh 4vh">
+       <p class='input-header' id="LNAME">Last Name</p>
+         <input class='input-box' style="width:100%"  type="text" placeholder='Doe'></input>
+     
+       </div>
+       </div>
+       <div class='input-suggest-flexbox'>
+       <div style="margin:3vh 4vh">
+       <p class='input-header' id="EMAIL">Email</p>
+         <input class='input-box' style="width:100%" type="text" placeholder='john@gmail.com'></input>
+     
+       </div>
+       
+       <div style="margin:3vh 4vh">
+       <p class='input-header' id="CONTACT">Contact</p>
+         <input class='input-box' style="width:100%"  type="text" placeholder='9152345677'></input>
+     
+       </div>
+       </div>
+      
+       <div style="margin:4vh">
+       <p class='input-header' id="TEXT">Message</p>
+        <textarea class='suggest-textarea' cols="43" rows="3" placeholder='Hello!'></textarea>
+     
+       </div>
+       <button class='suggest-btn' id="send_button">Send</button>
+     </div>
+     </div>
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 <script>
     var btn=document.getElementById("send_button");
     btn.addEventListener('click', function(e){
-        var name=document.getElementById("NAME").value;
+        var fname=document.getElementById("FNAME").value;
+        var lname=document.getElementById("LNAME").value;
         var email=document.getElementById("EMAIL").value;
-        var subject=document.getElementById("SUBJECT").value;
+        var contact=document.getElementById("CONTACT").value;
         var text=document.getElementById("TEXT").value;
         e.preventDefault();
             Email.send({
@@ -34,8 +59,8 @@
             Password : "generate_from_smtp_server",
             To : 'your_email',
             From : `${email}`,
-            Subject : `${subject}`,
-            Body : `<br>${text} <br><br> Name: ${name} <br> Email: ${email}`
+            Contact : `${contact}`,
+            Body : `<br>${text} <br><br> Name: ${fname} ${lname} <br> Email: ${email}`
         }).then(
             async message => {
                 if (message=="OK"){

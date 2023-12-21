@@ -273,7 +273,7 @@ app.get('*', (req, res) => {
   res.status(404).render("404-page");
 });
 
-app.listen(process.env.PORT, () => {
+app.listen(3000, () => {
   mongoose
     .connect(process.env.MONGO_SERVER, {
       useNewUrlParser: true,
@@ -285,5 +285,5 @@ app.listen(process.env.PORT, () => {
     .catch((error) => {
       console.log("DB connection failed", process.env.MONGO_SERVER);
     });
-  console.log(`Server is running on ${process.env.PORT}`);
+  console.log(`Server is running on 3000`);
 });

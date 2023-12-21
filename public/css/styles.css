@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins";
 }
 ::selection {
   color: var(--accent-clr);
@@ -218,10 +219,10 @@ header h1 {
   padding: 2rem;
   border-radius: 20px;
 }
-input {
+/* input {
   padding: 1rem !important;
   border-radius: 10px !important;
-}
+} */
 #goToTopBtn {
   position: fixed;
   bottom: 20px;
@@ -254,6 +255,9 @@ input {
   font-size: 1.3em;
   padding: 1rem;
 }
+
+
+
 @media (max-width: 600px) {
   .hero {
     flex-direction: column-reverse;
