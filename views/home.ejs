@@ -1,27 +1,119 @@
-<%- include('partials/header') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secrets Sharing Website</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-<div class="flexbox hero">
-  <div class="flexbox container">
-    <div class="main-content">
-      <h1>Don't Keep Your Secrets,</h1>
-      <h1 class="display-3">Share Them Anonymously!</h1>
+    .flexbox {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .hero {
+      background-color: #f8f8f8;
+      padding: 50px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .main-content h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .display-3 {
+      font-size: 3rem;
+    }
+
+    .buttons-container {
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .illustration {
+      font-size: 6rem;
+    }
+
+    #about {
+      background-color: #eaeaea;
+    }
+
+    .tagline {
+      text-align: center;
+      margin: 40px 0;
+      font-size: 1.5rem;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+
+  <header id="site-header" class="fixed-top">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg stroke">
+        <h1>
+          <a class="navbar-brand" href="index.html">
+            Foodi<span>e</span> Blog<i class="fas fa-utensils"></i>
+          </a>
+        </h1>
+        <!-- ... rest of the navigation ... -->
+      </nav>
     </div>
+  </header>
 
-    <div class="flexbox buttons-container" style="opacity: 0">
-      <a href="/register" role="button"
-        ><button class="secondary">Register</button></a
-      >
-      <a href="/login" role="button"><button>Login</button></a>
+  <div class="flexbox hero">
+    <div class="flexbox container main-content">
+      <div class="main-content">
+        <h1>Don't Keep Your Secrets,</h1>
+        <h1 class="display-3">Share Them Anonymously!</h1>
+      </div>
+
+      <div class="flexbox buttons-container">
+        <a href="/register" role="button"><button class="secondary">Register</button></a>
+        <a href="/login" role="button"><button>Login</button></a>
+      </div>
+    </div>
+    <div class="illustration">
+      <i class="fas fa-key fa-6x"></i>
     </div>
   </div>
-  <div class="illustration">
-    <i class="fas fa-key fa-6x"></i>
-  </div>
-</div>
-<section id="about" class="flexbox">
-  <p class="tagline">
-    We allow you to add your secrets that you don't want to share with anyone.
-  </p>
-  <a href="/about"><button>Know More</button></a>
-</section>
-<%- include('partials/footer') %>
+
+  <section id="about" class="flexbox">
+    <p class="tagline">
+      We allow you to add your secrets that you don't want to share with anyone.
+    </p>
+    <a href="/about"><button>Know More</button></a>
+  </section>
+
+  <footer>
+    <!-- Include your footer content here -->
+  </footer>
+
+</body>
+</html>
