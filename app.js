@@ -31,18 +31,32 @@ app.use(passport.session());
 
 //mongoose.connect("mongodb://127.0.0.1:27017/userDB");
 
+const voteSchema = new mongoose.Schema({
+  upvotes: Number,
+  downvotes: Number,
+});
+
+
 const userSchema = new mongoose.Schema({
   username: String,
   password: String,
   googleId: String,
   facebookId: String,
-  secret: [String],
+  secret: [
+    {
+      title: { type: String, required: true },
+      upvote: { type: Number, default: 0 },
+      downvote: { type: Number, default: 0 },
+    }
+  ],
 });
 
 userSchema.plugin(passportLocalMongoose);
 userSchema.plugin(findOrCreate);
 
 const User = mongoose.model("User", userSchema);
+const Vote = mongoose.model('Vote', voteSchema);
+
 
 passport.use(User.createStrategy());
 
@@ -219,7 +233,13 @@ app.get("/secrets", function (req, res) {
       console.log(err);
     } else {
       if (foundUsers) {
-        res.render("secrets", { usersWithSecrets: foundUsers });
+        
+        
+        res.render("secrets", {
+          usersWithSecrets: foundUsers,
+          upvoted: false,
+          downvoted: false,
+        });
       }
     }
   });
@@ -241,7 +261,7 @@ app.post("/submit-secret-form", function (req, res) {
     } else {
       if (foundUser) {
 
-        foundUser.secret.push(submittedSecret);
+        foundUser.secret.push({ title: submittedSecret });
 
         foundUser.save(function (err) {
           if (err) {
@@ -256,7 +276,7 @@ app.post("/submit-secret-form", function (req, res) {
 });
 
 app.get("/logout", function (req, res) {
-  req.logout(function(err) {
+  req.logout(function (err) {
     if (err) {
       console.error('Error during logout:', err);
       return res.redirect("/"); // Handle errors gracefully, redirect to home or login page
@@ -264,6 +284,47 @@ app.get("/logout", function (req, res) {
 
     res.redirect("/");
   });
+});
+
+// Update vote counts
+app.post('/api/votes', async (req, res) => {
+  try {
+    const { upvoteCount, downvoteCount, index, username } = req.body;
+
+    // Fetch the user from the database based on the username
+    const user = await User.findOne({ username });
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    // Check if the index is valid
+    if (index < 0 || index >= user.secret.length) {
+      return res.status(400).json({ error: 'Invalid secret index' });
+    }
+
+    // Update upvote and downvote for the specified secret
+    user.secret[index].upvote = upvoteCount;
+    user.secret[index].downvote = downvoteCount;
+
+    // Save the updated user object
+    await user.save();
+
+    res.json({ message: 'Vote updated successfully', user });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+
+  // const { upvotes, downvotes } = req.body;
+
+  // try {
+  //   const votes = await Vote.findOneAndUpdate({}, { upvotes, downvotes }, { new: true, upsert: true });
+  //   res.json(votes);
+  // } catch (error) {
+  //   console.error(error);
+  //   res.status(500).send('Internal Server Error');
+  // }
 });
 
 // Catch-all route for 404 errors

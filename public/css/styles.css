@@ -254,6 +254,23 @@ header h1 {
 .secret-text {
   font-size: 1.3em;
   padding: 1rem;
+  display: flex;
+}
+.vote-container{
+  display: flex;
+}
+.inner-secret-text{
+  margin-left: 30%;
+  margin-right: 15px;
+}
+.vote-container{
+  padding: 0 5px;
+}
+.vote-container img{
+  margin: 0 5px;
+}
+.vote-count{
+  margin-right: 10px;
 }
 
 
