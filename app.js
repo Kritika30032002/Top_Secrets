@@ -31,11 +31,6 @@ app.use(passport.session());
 
 //mongoose.connect("mongodb://127.0.0.1:27017/userDB");
 
-const voteSchema = new mongoose.Schema({
-  upvotes: Number,
-  downvotes: Number,
-});
-
 
 const userSchema = new mongoose.Schema({
   username: String,
@@ -55,8 +50,6 @@ userSchema.plugin(passportLocalMongoose);
 userSchema.plugin(findOrCreate);
 
 const User = mongoose.model("User", userSchema);
-const Vote = mongoose.model('Vote', voteSchema);
-
 
 passport.use(User.createStrategy());
 
