@@ -27,9 +27,9 @@ button.dark {
   color: #192e4e;
 }
 button.secondary.dark {
-  color: #a7daff;
-  outline-color: #a7daff;
-  background-color: #192e4e;
+  color: #192e4e;
+  background-color: #a7daff;
+}
 }
 #about.dark {
   background-color: #093c7e !important;

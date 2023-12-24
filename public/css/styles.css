@@ -68,9 +68,10 @@ nav a:hover {
   width: 40px;
   height: 40px;
   padding: 0;
-  border-radius: 50%;
+  border-radius: 50px;
   background-color: #a7daff;
-  color: var(--accent-clr);
+  background: transparent;
+  color:#a7daff;
   margin-right: 20px;
 }
 button {
@@ -81,16 +82,23 @@ button {
   outline: none;
   background: var(--accent-clr);
   color: #a7daff;
-  font-size: 1.2rem;
+  font-size: 1.0rem;
   border-radius: 10px;
   transition: background-color 0.5s, box-shadow 0.5s, color 0.5s;
 
   -webkit-tap-highlight-color: transparent;
 }
 button.secondary {
-  background-color: transparent;
-  color: var(--accent-clr);
-  outline: 2px solid var(--accent-clr);
+  cursor: pointer;
+  padding: 1em 2em;
+  border: none;
+  outline: none;
+  background: var(--accent-clr);
+  color: #a7daff;
+  font-size: 1.0rem;
+  border-radius: 10px;
+  transition: background-color 0.5s, box-shadow 0.5s, color 0.5s;
+  -webkit-tap-highlight-color: transparent;
 }
 button:hover {
   background-color: #070b43b2;
