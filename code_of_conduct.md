@@ -1,34 +1,72 @@
-<h2>Code Of Conduct-TOP_SECRETS</h2>
 
-Our Pledge
-In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to make participation in our project and our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.
+#  Code Of Conduct - TOP_SECRETS
 
-Our Standards
-Examples of behavior that contributes to a positive environment for our community include:
+## Code of Conduct
 
-Demonstrating empathy and kindness toward other people
-Being respectful of differing opinions, viewpoints, and experiences
-Giving and gracefully accepting constructive feedback
-Accepting responsibility and apologizing to those affected by our mistakes, and learning from the experience
-Focusing on what is best not just for us as individuals, but for the overall community
-Examples of unacceptable behavior include:
+In the spirit of fostering an open and welcoming environment, we as contributors and maintainers pledge to make participation in our project and our community a harassment-free experience for everyone, regardless of:
 
-The use of sexualized language or imagery, and sexual attention or advances
-Trolling, insulting or derogatory comments, and personal or political attacks
-Public or private harassment
-Publishing others' private information, such as a physical or email address, without their explicit permission
-Other conduct which could reasonably be considered inappropriate in a professional setting
-Our Responsibilities
-Project maintainers are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any instances of unacceptable behavior.
+* Age
+* Body size
+* Disability
+* Ethnicity
+* Sex characteristics
+* Gender identity and expression
+* Level of experience
+* Education
+* Socio-economic status
+* Nationality
+* Personal appearance
+* Race
+* Religion
+* Sexual identity and orientation
 
-Project maintainers have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, or to ban temporarily or permanently any contributor for other behavior that they deem inappropriate, threatening, offensive, or harmful.
+## Our Standards
 
-Scope
-This Code of Conduct applies within all community spaces, and also applies when an individual is officially representing the community in public spaces. Examples of representing our community include using an official e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event.
+These are some examples of behaviors that contribute to a positive environment for our community:
 
-Enforcement:
+* **Demonstrating empathy and kindness:** Treat others with respect and consideration.
+* **Respecting differing opinions:** Be open to different viewpoints and experiences.
+* **Giving and gracefully accepting feedback:** Offer constructive criticism and be receptive to it in return.
+* **Taking responsibility:** Own up to your mistakes and learn from them.
+* **Focusing on the community:** Consider what's best for the project and not just for yourself.
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement at <>. All complaints will be reviewed and investigated promptly and fairly.
+## Unacceptable Behavior
 
-Attribution
-This Code of Conduct is adapted from the Contributor Covenant, version 1.4, available at http://contributor-covenant.org/version/1/4
+The following behaviors are considered unacceptable and will not be tolerated:
+
+* **Sexualized language or imagery:** This includes unwelcome sexual advances or attention, as well as jokes or comments of a sexual nature.
+* **Trolling or personal attacks:** Do not insult, mock, or belittle others.
+* **Public or private harassment:** This includes unwanted communication, stalking, intimidation, and threats.
+* **Doxing:** Do not share private information about others without their consent.
+* **Other inappropriate conduct:** Any behavior that could reasonably be considered unprofessional or harmful will not be tolerated.
+
+## Responsibilities
+
+Project maintainers are responsible for:
+
+* Clearly communicating and enforcing these standards of acceptable behavior.
+* Taking appropriate and fair corrective action in response to any instances of unacceptable behavior.
+* Removing, editing, or rejecting contributions that violate this Code of Conduct.
+* Banning temporarily or permanently any contributor for persistent or egregious violations.
+
+## Scope
+
+This Code of Conduct applies to all community spaces, including:
+
+* GitHub repositories
+* Issue trackers and pull requests
+* Forums and chat channels
+* Social media accounts
+* Online and offline events
+
+It also applies when officially representing the community in public spaces, such as using official email addresses or social media accounts.
+
+## Enforcement
+
+If you experience or witness any behavior that violates this Code of Conduct, please report it to the community leaders at [reporting email address]. All complaints will be reviewed and investigated promptly and fairly.
+
+## Attribution
+
+This Code of Conduct is adapted from the Contributor Covenant, version 1.4, available at [http://contributor-covenant.org/version/1/4](http://contributor-covenant.org/version/1/4).
+
+

@@ -1,51 +1,65 @@
-Contributing to TOP_SECRETS
-Thank you for considering contributing to TOP_SECRETS!
-Whether it's fixing a bug , proposing a new feature , or improving documentation, your contributions are greatly appreciated.
 
-Code of Conduct
-Please make sure to read and follow our Code of Conduct before contributing to the project.
 
-Getting Started
-Fork the repository:
+ **# Contributing to TOP_SECRETS**
 
-Create a personal copy of the TOP_SECRETS repository on Github.
-You can do this by clicking the "Fork" button on the TOP_SECRETS repository page.
-Clone the repository locally:
+**Thank you for considering contributing to TOP_SECRETS!**  Your contributions are greatly appreciated, whether it's fixing a bug, proposing a new feature, or improving documentation.
 
-After forking the repository, clone it locally on your computer so that you can work on the code and make changes.
-git clone https://github.com/<YOUR-USERNAME>/TOP_SECRETS.git
-Create a new branch:
+**## Code of Conduct**
 
-Before making any changes, create a new branch in your local repository.
-This is done to ensure that your changes are isolated from the main branch and can be easily reviewed and merged later.
-git checkout -b <branch-name>
-Make changes:
+Before contributing, please make sure to read and follow our Code of Conduct: ./CODE_OF_CONDUCT.md.
 
-Start making changes to the code, fixing bugs, adding new features, etc.
-Push changes to the fork:
+**## Getting Started**
 
-Once the changes have been made, push them to your fork on Github.
-git add .
-git commit -m "Description of changes"
-git push origin <branch-name>
-Submitting a Pull Request
-Make sure your changes are well-documented and include relevant tests.
+**1. Fork the repository:**
 
-If you've added new functionality, include appropriate documentation.
+- Create a personal copy of the TOP_SECRETS repository on GitHub by clicking the "Fork" button on the repository page.
 
-Follow the coding conventions used in the project.
+**2. Clone the repository locally:**
 
-Before submitting your pull request, make sure the following items have been checked:
+- Clone your forked repository to your local machine to make changes:
 
-All tests pass and the build is successful.
-Your changes do not produce any new warnings or errors.
-Your changes have been thoroughly tested on different platforms and browsers.
-Your changes do not break backward compatibility.
-When you're ready, submit a pull request and include a descriptive title and a detailed description of your changes.
+  ```bash
+  git clone https://github.com/<YOUR-USERNAME>/TOP_SECRETS.git
+  ```
 
-Additional Resources
-Project documentation
-Issue tracker
-Thank you again for your interest in contributing to TOP_SECRETS.
+**3. Create a new branch:**
 
-We look forward to working with you!
+- Isolate your changes from the main branch by creating a new branch:
+
+  ```bash
+  git checkout -b <branch-name>
+  ```
+
+**4. Make changes:**
+
+- Start making your changes to the code, fixing bugs, adding new features, or improving documentation.
+
+**5. Push changes to the fork:**
+
+- Once you've made your changes, push them to your fork on GitHub:
+
+  ```bash
+  git add .
+  git commit -m "Description of changes"
+  git push origin <branch-name>
+  ```
+
+**## Submitting a Pull Request**
+
+- **Ensure your changes are well-documented and include relevant tests.**
+- **Follow the coding conventions used in the project.**
+- **Before submitting a pull request, confirm the following:**
+
+    - All tests pass and the build is successful.
+    - Your changes do not produce any new warnings or errors.
+    - Your changes have been thoroughly tested on different platforms and browsers (if applicable).
+    - Your changes do not break backward compatibility.
+
+- **Submit a pull request with a descriptive title and a detailed description of your changes.**
+
+**## Additional Resources**
+
+- Project Documentation: ./docs/
+- Issue Tracker: [https://github.com/](https://github.com/)<YOUR-USERNAME>/TOP_SECRETS/issues
+
+**Thank you again for your interest in contributing to TOP_SECRETS! We look forward to working with you. **

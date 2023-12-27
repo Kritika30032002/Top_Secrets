@@ -5,7 +5,7 @@
  
  ![Discord Server](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)
  
- This is a website that allows user to add their secrets anonymously to the website. Thus makes its interesting. One can add their secrets that they don't want to share with anyone.
+ This is a website that allows user to add their secrets anonymously to the website. Thus, makes it interesting. One can add their secrets that they don't want to share with anyone.
     
 </div>
 
