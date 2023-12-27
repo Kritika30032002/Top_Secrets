@@ -31,8 +31,8 @@
 - Javascript
 - CSS
 - Bootstrap
-- Nodejs
-- Expressjs
+- Node.js
+- Express.js
 - MongoDB
 
 ## 🚀 Project Setup
