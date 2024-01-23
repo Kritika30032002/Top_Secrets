@@ -206,7 +206,7 @@ header h1 {
   border-radius: 10px;
 }
 .container-about {
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .login-container .card,
 .register-container .card {
