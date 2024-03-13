@@ -71,7 +71,7 @@ nav a:hover {
   border-radius: 50px;
   background-color: #a7daff;
   background: transparent;
-  color:#a7daff;
+  color: #a7daff;
   margin-right: 20px;
 }
 button {
@@ -82,7 +82,7 @@ button {
   outline: none;
   background: var(--accent-clr);
   color: #a7daff;
-  font-size: 1.0rem;
+  font-size: 1rem;
   border-radius: 10px;
   transition: background-color 0.5s, box-shadow 0.5s, color 0.5s;
 
@@ -95,7 +95,7 @@ button.secondary {
   outline: none;
   background: var(--accent-clr);
   color: #a7daff;
-  font-size: 1.0rem;
+  font-size: 1rem;
   border-radius: 10px;
   transition: background-color 0.5s, box-shadow 0.5s, color 0.5s;
   -webkit-tap-highlight-color: transparent;
@@ -264,24 +264,22 @@ header h1 {
   padding: 1rem;
   display: flex;
 }
-.vote-container{
+.vote-container {
   display: flex;
 }
-.inner-secret-text{
+.inner-secret-text {
   margin-left: 30%;
   margin-right: 15px;
 }
-.vote-container{
+.vote-container {
   padding: 0 5px;
 }
-.vote-container img{
+.vote-container img {
   margin: 0 5px;
 }
-.vote-count{
+.vote-count {
   margin-right: 10px;
 }
-
-
 
 @media (max-width: 600px) {
   .hero {
@@ -325,10 +323,10 @@ header h1 {
     align-items: center;
     width: 100%;
   }
-  button{
+  button {
     font-size: 0.9em;
   }
-  .tagline{
+  .tagline {
     font-size: 0.6rem;
   }
 }
