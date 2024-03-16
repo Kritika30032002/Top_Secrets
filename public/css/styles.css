@@ -28,7 +28,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   gap: 20px;
 }
 .loader {
@@ -195,7 +195,7 @@ header h1 {
   border: 2px solid #a7daff;
 }
 .about-page {
-  padding: 3rem;
+  padding: 4.2rem;
 }
 .about-title {
   font-size: 3rem;
@@ -207,6 +207,9 @@ header h1 {
 }
 .container-about {
   justify-content: space-between;
+}
+.container-image {
+  padding-bottom: 3%;
 }
 .login-container .card,
 .register-container .card {
@@ -284,6 +287,9 @@ header h1 {
 
 
 @media (max-width: 600px) {
+  .flexbox {
+    flex-wrap: wrap;
+  }
   .hero {
     flex-direction: column-reverse;
   }
