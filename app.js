@@ -106,7 +106,7 @@ passport.use(
     {
       clientID: process.env.FACEBOOK_APP_ID,
       clientSecret: process.env.FACEBOOK_APP_SECRET,
-      callbackURL: `${process.env.PUBLIC_BASENAME}auth/google/secrets`,
+      callbackURL: `${process.env.PUBLIC_BASENAME}auth/facebook/secrets`,
     },
     function (accessToken, refreshToken, profile, cb) {
       User.findOne({ facebookId: profile.id }, (err, existingUser) => {
