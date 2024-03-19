@@ -179,6 +179,9 @@ app.get("/contact", function (req, res) {
 app.get("/register", function (req, res) {
   res.render("register");
 });
+app.get("/privacy", function (req, res) {
+  res.render("privacy");
+});
 
 app.post("/register", function (req, res) {
   User.register(
