@@ -358,3 +358,16 @@ header h1 {
     transform: rotate(0deg);
   }
 }
+
+/* CSS for Privacy */
+
+main {
+  margin: 1px 60px;
+  padding: 1px 0;
+}
+
+section.c1 {
+  /* background-color: #f0f0f0; */
+  padding: 20px;
+  margin-bottom: 20px;
+}
