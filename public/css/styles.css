@@ -270,9 +270,10 @@ header h1 {
 .vote-container{
   display: flex;
 }
-.inner-secret-text{
-  margin-left: 30%;
+.inner-secret-text {
+  /* margin-left: 30%; */
   margin-right: 15px;
+  flex: 1; /* Add this line to make the text expand to fill the available space */
 }
 .vote-container{
   padding: 0 5px;
