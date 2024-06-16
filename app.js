@@ -29,9 +29,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-//mongoose.connect("mongodb://127.0.0.1:27017/userDB");
 mongoose.set('strictQuery', false);
-
 
 const userSchema = new mongoose.Schema({
   username: String,
@@ -51,7 +49,6 @@ userSchema.plugin(passportLocalMongoose);
 userSchema.plugin(findOrCreate);
 
 const User = mongoose.model("User", userSchema);
-
 
 passport.use(User.createStrategy());
 
@@ -173,12 +170,13 @@ app.get("/about", function (req, res) {
 });
 
 app.get("/contact", function (req, res) {
-  res.render("contact.ejs");
+  res.render("contact");
 });
 
 app.get("/register", function (req, res) {
   res.render("register");
 });
+
 app.get("/privacy", function (req, res) {
   res.render("privacy");
 });
@@ -190,13 +188,10 @@ app.post("/register", function (req, res) {
     function (err, user) {
       if (err) {
         console.log(err);
-        res.send({ success: false, message: err.message });
+        res.render("register", { error: err.message });
       } else {
         passport.authenticate("local")(req, res, function () {
-          res.send({
-            success: true,
-            message: "Registration Successful, Login to continue",
-          });
+          res.redirect("/login");
         });
       }
     }
@@ -205,22 +200,17 @@ app.post("/register", function (req, res) {
 
 app.post("/login", function (req, res, next) {
   passport.authenticate("local", function (err, user, info) {
-    // Check for errors during authentication
     if (err) {
       return next(err);
     }
-    // Check if authentication failed
     if (!user) {
-      // Send success-fail-message, further raise toast notifications
-      res.send({ success: false, message: info.message });
+      return res.render("login", { error: info.message });
     }
-    // If authentication succeeded, log in the user
     req.logIn(user, function (err) {
       if (err) {
         return next(err);
       }
-      // Send success-true-message, further redirects to secrets page
-      res.send({ success: true, message: "Login Successful!" });
+      return res.redirect("/secrets");
     });
   })(req, res, next);
 });
@@ -231,8 +221,6 @@ app.get("/secrets", function (req, res) {
       console.log(err);
     } else {
       if (foundUsers) {
-        
-        
         res.render("secrets", {
           usersWithSecrets: foundUsers,
           upvoted: false,
@@ -258,7 +246,6 @@ app.post("/submit-secret-form", function (req, res) {
       console.log(err);
     } else {
       if (foundUser) {
-
         foundUser.secret.push({ title: submittedSecret });
 
         foundUser.save(function (err) {
@@ -277,35 +264,29 @@ app.get("/logout", function (req, res) {
   req.logout(function (err) {
     if (err) {
       console.error('Error during logout:', err);
-      return res.redirect("/"); // Handle errors gracefully, redirect to home or login page
+      return res.redirect("/");
     }
-
     res.redirect("/");
   });
 });
 
-// Update vote counts
 app.post('/api/votes', async (req, res) => {
   try {
     const { upvoteCount, downvoteCount, index, username } = req.body;
 
-    // Fetch the user from the database based on the username
     const user = await User.findOne({ username });
 
     if (!user) {
       return res.status(404).json({ error: 'User not found' });
     }
 
-    // Check if the index is valid
     if (index < 0 || index >= user.secret.length) {
       return res.status(400).json({ error: 'Invalid secret index' });
     }
 
-    // Update upvote and downvote for the specified secret
     user.secret[index].upvote = upvoteCount;
     user.secret[index].downvote = downvoteCount;
 
-    // Save the updated user object
     await user.save();
 
     res.json({ message: 'Vote updated successfully', user });
@@ -313,22 +294,9 @@ app.post('/api/votes', async (req, res) => {
     console.error(error);
     res.status(500).json({ error: 'Internal server error' });
   }
-
-  // const { upvotes, downvotes } = req.body;
-
-  // try {
-  //   const votes = await Vote.findOneAndUpdate({}, { upvotes, downvotes }, { new: true, upsert: true });
-  //   res.json(votes);
-  // } catch (error) {
-  //   console.error(error);
-  //   res.status(500).send('Internal Server Error');
-  // }
 });
 
-// Catch-all route for 404 errors
 app.get('*', (req, res) => {
-  // Redirect to a specific URL or send a custom 404 response
-
   res.status(404).render("404-page");
 });
 
