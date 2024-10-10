@@ -3,7 +3,8 @@
  # Top_Secrets
  ![License](https://img.shields.io/github/license/Kritika30032002/Top_Secrets.svg?style=for-the-badge) ![Repo Size](https://img.shields.io/github/languages/code-size/Kritika30032002/Top_Secrets.svg?style=for-the-badge) ![TOP_LANGUAGE](https://img.shields.io/github/languages/top/Kritika30032002/Top_Secrets.svg?style=for-the-badge) ![FORKS](https://img.shields.io/github/forks/Kritika30032002/Top_Secrets.svg?style=for-the-badge&social) ![Stars](https://img.shields.io/github/stars/Kritika30032002/Top_Secrets.svg?style=for-the-badge)
  
- ![Discord Server](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)
+ [![Discord Server](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/GQCMP8rhB2)
+
  
  This is a website that allows user to add their secrets anonymously to the website. Thus makes its interesting. One can add their secrets that they don't want to share with anyone.
     
