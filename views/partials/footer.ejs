@@ -1,161 +1,150 @@
+<% const currentYear = new Date().getFullYear(); %>
 
-<% const currentYear=new Date().getFullYear(); %>
+<div class="footer bg-dark py-4">
+  <div class="container">
+    <div class="row">
+      <!-- Website Description -->
+      <div class="col-md-3 col-sm-12 mb-4 text-left">
+        <h5 class="footer-title text-white">Secrets</h5>
+        <p class="text-white">
+          Share your secrets, anonymously! Our platform allows you to express
+          yourself freely while maintaining privacy.
+        </p>
+      </div>
 
-<div class="bg-dark text-center" style="padding: 1em 0 1em 0">
-  <h5 class="card-title" style="color: white">
-    Share your secrets, anonymously!
-  </h5>
-  <h6 class="card-title" style="color: white">
-    <a href="/privacy"> Privacy Policy </a>
-    &copy; Copyright <%= currentYear %>
-  </h6>
-  <p class="card-text" style="color: white">
-    Made by
-    <a
-      href="https://github.com/Kritika30032002"
-      style="text-decoration: none; color: white"
-    >
-      Kritika Gupta
-    </a>
-  </p>
-  <!-- <p class="card-text" style="color: white;">&copy; Copyright <%= currentYear %> </p> -->
-  <!-- <div style="padding-bottom: 5em;">     -->
-  <a
-    href="https://www.linkedin.com/in/kritika-gupta-343458212"
-    class="btn my-2 my-sm-0 social"
-    type="submit"
-    style="border: none; margin-right: 1em"
-    target="_blank"
-  >
-    <img
-      src="https://static-00.iconduck.com/assets.00/linkedin-icon-2048x2048-ya5g47j2.png"
-      height="50px"
-      width="50px"
-      style="border: 3px white solid; border-radius: 100%"
-      target="_blank"
-    />
-  </a>
-  <a
-    href="https://github.com/Kritika30032002"
-    class="btn my-2 my-sm-0 social"
-    type="submit"
-    style="border: none"
-  >
-    <img
-      src="https://cdn3.iconfinder.com/data/icons/inficons/512/github.png"
-      height="50px"
-      width="50px"
-      style="border: 3px white solid; border-radius: 100%"
-    />
-  </a>
+      <!-- About Page and Other Links -->
+      <div class="col-md-3 col-sm-12 mb-4 text-left">
+        <h5 class="footer-title text-white">Useful Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="/about" class="footer-link">About Us</a></li>
+          <li><a href="/terms" class="footer-link">Terms of Service</a></li>
+          <li><a href="/faq" class="footer-link">FAQ</a></li>
+          <li><a href="/privacy" class="footer-link">Privacy Policy</a></li>
+        </ul>
+      </div>
 
-  <!-- </div> -->
+      <!-- Helpdesk, Queries, and Contact -->
+      <div class="col-md-3 col-sm-12 mb-4 text-left">
+        <h5 class="footer-title text-white">Help & Contact</h5>
+        <ul class="list-unstyled">
+          <li><a href="mailto:support@secrets.com" class="footer-link">Helpdesk</a></li>
+          <li><a href="/contact" class="footer-link">Contact Us</a></li>
+          <li><a href="/support" class="footer-link">Submit a Query</a></li>
+        </ul>
+      </div>
+
+      <!-- Social Media Icons -->
+      <div class="col-md-3 col-sm-12 mb-4 text-center">
+        <h5 class="footer-title text-white">Follow Us</h5>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/kritika-gupta-343458212" target="_blank" class="social-icon">
+            <img
+              src="https://static-00.iconduck.com/assets.00/linkedin-icon-2048x2048-ya5g47j2.png"
+              alt="LinkedIn"
+              class="icon"
+            />
+          </a>
+          <a href="https://github.com/Kritika30032002" target="_blank" class="social-icon">
+            <img
+              src="https://cdn3.iconfinder.com/data/icons/inficons/512/github.png"
+              alt="GitHub"
+              class="icon"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Copyright Section -->
+    <div class="row">
+      <div class="col-12 text-center">
+        <p class="text-white">
+          &copy; <%= currentYear %> All Rights Reserved. Created by
+          <a href="https://github.com/Kritika30032002" class="footer-link" target="_blank">
+            Kritika Gupta
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
-<script>
-  function toggle_nav() {
-    let naV = document.getElementById("nav_small");
-    let Nav = document.getElementById("nav_small2");
-    if (
-      naV.classList.contains("side_nav") &&
-      Nav.classList.contains("content")
-    ) {
-      naV.classList.remove("side_nav");
-      naV.classList.add("hide");
-      Nav.classList.remove("content");
-      Nav.classList.add("hide");
-    } else {
-      naV.classList.remove("hide");
-      naV.classList.add("side_nav");
-      Nav.classList.remove("hide");
-      Nav.classList.add("content");
-    }
-  }
-  function toggle_nav_body() {
-    let naV = document.getElementById("nav_small");
-    if (naV.classList.contains("side_nav")) {
-      naV.classList.remove("side_nav");
-      naV.classList.add("hide");
-    }
-  }
-  function toggleTheme() {
-    document.querySelectorAll("*").forEach((el) => {
-      el.classList.toggle("dark");
-    });
-    // changing the icon inside the theme toggle button
-    if (localStorage.getItem("theme") === "light") {
-      document.querySelector("#theme-toggle .fa-sun").style.display =
-        "none";
-      document.querySelector("#theme-toggle .fa-moon").style.display =
-        "inline-block";
-    } else {
-      document.querySelector("#theme-toggle .fa-sun").style.display =
-        "inline-block";
-      document.querySelector("#theme-toggle .fa-moon").style.display =
-        "none";
-    }
+
+<style>
+  /* Footer General Styling */
+  .footer {
+    background-color: #343a40;
+    padding: 2em 0;
+    border-top: 1px solid #e0e0e0;
   }
 
-  if (!localStorage.getItem("theme")) {
-    // if theme is not already set on localstorage
-    if (
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-    ) {
-      // dark mode preferred by user as per os settings
-      localStorage.setItem("theme", "dark");
-    } else {
-      localStorage.setItem("theme", "light");
-    }
+  .footer-title {
+    font-size: 1.4rem;
+    font-weight: bold;
   }
 
-  document.getElementById("theme-toggle").addEventListener("click", (e) => {
-    e.preventDefault();
-    localStorage.setItem(
-      "theme",
-      localStorage.getItem("theme") === "light" ? "dark" : "light"
-    );
-    toggleTheme();
-  });
-</script>
-
-<!-- library to break full line into separate words -->
-<script src="https://unpkg.com/split-type"></script>
-
-<!-- animation library -->
-<script>
-  // Implementing the landing page animation
-  function startAnimation() {
-    const heading = document.querySelector(".hero .main-content");
-    if(!heading){
-      return;
-    }
-    const buttonContainer = document.querySelector(
-      ".hero .buttons-container"
-    );
-
-    const init_value = heading.innerHTML;
-    const headingSplit = new SplitType(heading);
-
-    for (let i = 0; i < headingSplit.chars.length; i++) {
-      let char = headingSplit.chars[i];
-      char.style.setProperty("animation-delay", i * 0.05 + "s");
-    }
-
-    // after whole animation restore initial content so that newly formed characters don't interfere with other things like resizing
-    setTimeout(() => {
-      //   heading.innerHTML = init_value;
-      //   heading.style.lineHeight = "1.72em";
-
-      buttonContainer.style.opacity = "1";
-      buttonContainer.style.transform = "none";
-    }, headingSplit.chars.length * 0.05 * 1000 + 500);
+  .footer-link {
+    text-decoration: none;
+    color: #00acee;
+    transition: color 0.3s ease;
   }
-  window.onload = () => {
-    startAnimation();
-    if (localStorage.getItem("theme") === "dark") {
-      toggleTheme();
-    }
-  };
-</script>
-</body>
-</html>
+
+  .footer-link:hover {
+    color: #007bff;
+  }
+
+  /* Social Icons */
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 1em;
+  }
+
+  .social-icon .icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .social-icon:hover .icon {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Footer Columns Styling */
+  .row {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .list-unstyled {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .text-white {
+    color: white;
+  }
+
+  .text-left {
+    text-align: left;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .py-4 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .mb-4 {
+    margin-bottom: 1.5rem;
+  }
+
+  .mt-4 {
+    margin-top: 1.5rem;
+  }
+</style>
