@@ -1,5 +1,42 @@
 <%- include('partials/header') %>
 
+<style>
+  /* Default button styles */
+  button {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 2px solid #333;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  
+  button:hover {
+    background-color: #333;
+    color: #fff;
+    border: 2px solid #f0f0f0;
+  }
+  
+  button:active,
+  button:focus {
+    outline: none;
+    transform: scale(0.98);
+  }
+
+  
+  .secondary {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+
+  .secondary:hover {
+    background-color: #333;
+    color: #fff;
+    border: 2px solid #f0f0f0;
+  }
+</style>
+
 <div class="flexbox hero">
   <div class="flexbox container">
     <div class="main-content">
@@ -8,20 +45,26 @@
     </div>
 
     <div class="flexbox buttons-container" style="opacity: 0">
-      <a href="/register" role="button"
-        ><button class="secondary">Register</button></a
-      >
-      <a href="/login" role="button"><button class="secondary">Login</button></a>
+      <a href="/register" role="button">
+        <button class="secondary">Register</button>
+      </a>
+      <a href="/login" role="button">
+        <button class="secondary">Login</button>
+      </a>
     </div>
   </div>
   <div class="illustration">
     <i class="fas fa-key fa-6x"></i>
   </div>
 </div>
+
 <section id="about" class="flexbox">
   <p class="tagline">
     We allow you to add your secrets that you don't want to share with anyone.
   </p>
-  <a href="/about"><button>Know More</button></a>
+  <a href="/about">
+    <button>Know More</button>
+  </a>
 </section>
+
 <%- include('partials/footer') %>
