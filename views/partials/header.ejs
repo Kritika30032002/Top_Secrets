@@ -24,13 +24,13 @@
     <link rel="stylesheet" href="css/SuggestModal.css" />
   </head>
 
-  <body oncanplay="toggle_nav_body()">
+  <body>
     <nav class="navbar navbar-dark bg-dark justify-content-between" id="navbar">
       <a href="/" class="navbar-brand" style="border: 1px solid transparent">
         <i class="fas fa-key fa-1.5x logo" style="color: white"></i>
         Secrets</a
       >
-      <form class="form-inline">
+      <form class="form-inline" onsubmit="return false;">
         <button id="theme-toggle">
           <i class="fas fa-sun" style="display: none;font-size: medium;"></i>
           <i class="fas fa-moon" style="font-size: medium;"></i>
@@ -55,33 +55,40 @@
         </div>
       </form>
     </nav>
+
     <div class="hide" id="nav_small">
       <div class="hide" id="nav_small2">
-        <a
-          href="/"
-          class="btn my-2 my-sm-0 home"
-          type="submit"
-          onclick="toggle_nav()"
-        >
-          Home
-        </a>
-        <a
-          href="/about"
-          class="btn my-2 my-sm-0 about"
-          type="submit"
-          onclick="toggle_nav()"
-        >
-          About
-        </a>
-        <a
-          href="/contact"
-          class="btn my-2 my-sm-0 about"
-          type="submit"
-          onclick="toggle_nav()"
-        >
-          Contact
-        </a>
+        <a href="/" class="btn my-2 my-sm-0 home" type="submit" onclick="toggle_nav()">Home</a>
+        <a href="/about" class="btn my-2 my-sm-0 about" type="submit" onclick="toggle_nav()">About</a>
+        <a href="/contact" class="btn my-2 my-sm-0 about" type="submit" onclick="toggle_nav()">Contact</a>
       </div>
     </div>
+
+    <!-- Added JS for toggle -->
+    <script>
+      function toggle_nav() {
+        const navSmall = document.getElementById('nav_small');
+        const navSmall2 = document.getElementById('nav_small2');
+        
+        navSmall.classList.toggle('hide');
+        navSmall2.classList.toggle('hide');
+      }
+    
+      // Hide mobile menu if clicked outside the navbar
+      function toggle_nav_body() {
+        const navbar = document.getElementById('navbar');
+        const navSmall = document.getElementById('nav_small');
+        const navSmall2 = document.getElementById('nav_small2');
+        
+        document.body.addEventListener('click', function (e) {
+          if (!navbar.contains(e.target) && !navSmall.contains(e.target)) {
+            navSmall.classList.add('hide');
+            navSmall2.classList.add('hide');
+          }
+        });
+      }    
+      document.addEventListener('DOMContentLoaded', toggle_nav_body);
+    </script>
+    
   </body>
 </html>

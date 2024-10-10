@@ -52,31 +52,75 @@ html {
   border-bottom-color: transparent;
   animation: spin 1.25s linear infinite;
 }
+/* Navbar links */
 nav a {
   color: #a7daff !important;
 }
+
 nav a:hover {
   border: 1px solid #a7daff !important;
 }
+
 .navbar-brand {
   color: white !important;
 }
-#nav_small {
-  display: none;
+
+/* Hamburger & Mobile Nav */
+.hamburger {
+  display: none; /* Hidden on larger screens */
 }
+
+#nav_small {
+  display: none; /* Hidden initially */
+  /* background-color: var(--accent-clr); 
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  z-index: 1500; */
+}
+
+/* Styles for mobile nav items */
+/* #nav_small a {
+  color: white;
+  padding: 10px;
+  text-align: center;
+  background-color: #444;
+  border-bottom: 1px solid #555;
+}
+
+#nav_small a:hover {
+  background-color: #555;
+} */
+
+#nav_small2 {
+  display: none; 
+}
+
+/* #nav_small2 a {
+  color: #a7daff;
+  padding: 10px;
+  text-align: center;
+  background-color: #192e4e;
+  border-bottom: 1px solid #444;
+}
+
+#nav_small2 a:hover {
+  background-color: #0a1d3c;
+} */
+
 #theme-toggle {
   width: 40px;
   height: 40px;
   padding: 0;
   border-radius: 50px;
-  background-color: #a7daff;
-  background: transparent;
-  color:#a7daff;
+  background-color: transparent;
+  color: #a7daff;
   margin-right: 20px;
 }
+
 button {
   cursor: pointer;
-
   padding: 1em 2em;
   border: none;
   outline: none;
@@ -85,7 +129,6 @@ button {
   font-size: 1.0rem;
   border-radius: 10px;
   transition: background-color 0.5s, box-shadow 0.5s, color 0.5s;
-
   -webkit-tap-highlight-color: transparent;
 }
 button.secondary {
@@ -284,7 +327,42 @@ header h1 {
   margin-right: 10px;
 }
 
+/* Making navbar responsive */
+@media (max-width: 768px) {
+  .navbar .nav_big {
+    display: none; /* Hide large nav items on mobile */
+  }
 
+  .hamburger {
+    display: block; /* Show hamburger on mobile */
+    color: #a7daff;
+  }
+
+  .hide#nav_small {
+    display: block;
+    background-color: #333;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .hide#nav_small2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hide#nav_small2 a {
+    padding: 10px;
+    color: white;
+    background-color: #444;
+  }
+
+  .hide#nav_small2 a:hover {
+    background-color: #555;
+  }
+}
 
 @media (max-width: 600px) {
   .flexbox {
@@ -293,7 +371,7 @@ header h1 {
   .hero {
     flex-direction: column-reverse;
   }
-  .illustration {
+  /* .illustration {
     scale: 1;
   }
   .hamburger {
@@ -315,14 +393,30 @@ header h1 {
   #nav_small.side_nav a {
     width: 100%;
     color: #a7daff;
+  } */
+  .know_more{
+    width: 100%;
+    height: auto;
+    font-size: 0.9rem;
+  }
+  .illustration{
+    margin: 0px;
+  }
+  .main-content {
+    height: 100px;
+    margin-bottom: 0px;
+    padding-top: 20px;
+  }
+  .hero{
+    min-height: 350px;
   }
   .hero .container {
     align-items: center;
   }
-  .main-content {
+  /* .main-content {
     margin-left: unset !important;
     margin-top: unset !important;
-  }
+  } */
   .main-content h1 {
     text-align: center;
   }
@@ -360,7 +454,6 @@ header h1 {
 }
 
 /* CSS for Privacy */
-
 main {
   margin: 1px 60px;
   padding: 1px 0;
