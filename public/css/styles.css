@@ -72,14 +72,13 @@ nav a:hover {
 
 #nav_small {
   display: none; /* Hidden initially */
-  /* background-color: var(--accent-clr); 
-  position: absolute;
-  top: 60px;
-  left: 0;
-  width: 100%;
-  z-index: 1500; */
 }
-
+#nav_small2 {
+  display: none; 
+}
+.hide {
+  display: none;
+}
 /* Styles for mobile nav items */
 /* #nav_small a {
   color: white;
@@ -92,10 +91,6 @@ nav a:hover {
 #nav_small a:hover {
   background-color: #555;
 } */
-
-#nav_small2 {
-  display: none; 
-}
 
 /* #nav_small2 a {
   color: #a7daff;
@@ -326,19 +321,44 @@ header h1 {
 .vote-count{
   margin-right: 10px;
 }
+.button_all_white, .button_all_black{
+  font-size: 1em; 
+  margin: 10px;
+}
 
-/* Making navbar responsive */
+/* styling edit and delete icons */
+.icon{
+  color: white;
+  height: 30px;
+  width: 30px;
+  transition: transform 0.2s;
+  color: #ff4b4b;
+}
+.icon:hover {
+  transform: scale(1.1);
+}
 @media (max-width: 768px) {
+  /* Making navbar responsive */
+  .hide {
+    display: none;
+  }
+  .hide#nav_small {
+    display: none;
+  }
+
+  .hide#nav_small2 {
+    display: none;
+  }
   .navbar .nav_big {
-    display: none; /* Hide large nav items on mobile */
+    display: none; 
   }
 
   .hamburger {
-    display: block; /* Show hamburger on mobile */
+    display: block; 
     color: #a7daff;
   }
 
-  .hide#nav_small {
+  #nav_small {
     display: block;
     background-color: #333;
     position: absolute;
@@ -348,19 +368,61 @@ header h1 {
     z-index: 1000;
   }
 
-  .hide#nav_small2 {
+  #nav_small2 {
     display: flex;
     flex-direction: column;
   }
 
-  .hide#nav_small2 a {
+  #nav_small2 a {
     padding: 10px;
     color: white;
     background-color: #444;
   }
 
-  .hide#nav_small2 a:hover {
+  #nav_small2 a:hover {
     background-color: #555;
+  }
+  /* Making secret page responsive */
+  .button_all_white{
+    font-size: 1.5em; 
+    margin: 10px;
+    width: 100px;
+    height: 50px;
+  }
+  .button_all_black{
+    font-size: 1.5em; 
+    margin: 10px;
+    width: 150px;
+    height: 50px;
+  }
+  /* Making login & register page responsive */
+  .form-control{
+    font-size: 1rem;
+    height: 45px;
+    border-radius: 20px;
+    padding: 10px;
+  }
+  .button_all_black#user-login{
+    font-size: 1.2rem;
+    height: 45px;
+  }
+  .btn-social{
+    height: 40px;
+    padding: 10px 50px;
+  }
+  .pass-text{
+    font-size: 0.8rem;
+    margin-left: 10px;
+    color: red;
+  }
+  .form-check{
+    margin-left: 3px;
+  }
+  .form-check .pass-text{
+    padding-top: 1px;
+    font-size: 1.0rem;
+    color: black;
+    font-weight: 500;
   }
 }
 

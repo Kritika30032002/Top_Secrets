@@ -61,6 +61,8 @@
         <a href="/" class="btn my-2 my-sm-0 home" type="submit" onclick="toggle_nav()">Home</a>
         <a href="/about" class="btn my-2 my-sm-0 about" type="submit" onclick="toggle_nav()">About</a>
         <a href="/contact" class="btn my-2 my-sm-0 about" type="submit" onclick="toggle_nav()">Contact</a>
+        <a href="/register" class="btn my-1 my-sm-0 register" type="submit">Register</a>
+        <a href="/login" class="btn my-2 my-sm-0 login" type="submit">Login</a>
       </div>
     </div>
 
@@ -74,20 +76,18 @@
         navSmall2.classList.toggle('hide');
       }
     
-      // Hide mobile menu if clicked outside the navbar
-      function toggle_nav_body() {
-        const navbar = document.getElementById('navbar');
+      // Function to hide nav_small and nav_small2 on page load
+      function hide_nav_on_load() {
         const navSmall = document.getElementById('nav_small');
         const navSmall2 = document.getElementById('nav_small2');
-        
-        document.body.addEventListener('click', function (e) {
-          if (!navbar.contains(e.target) && !navSmall.contains(e.target)) {
-            navSmall.classList.add('hide');
-            navSmall2.classList.add('hide');
-          }
-        });
-      }    
-      document.addEventListener('DOMContentLoaded', toggle_nav_body);
+
+        // Add 'hide' class to both elements on page load
+        navSmall.classList.add('hide');
+        navSmall2.classList.add('hide');
+      }
+
+      // Call the function to hide elements when the DOM is fully loaded
+      document.addEventListener('DOMContentLoaded', hide_nav_on_load);
     </script>
     
   </body>
