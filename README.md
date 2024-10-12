@@ -156,6 +156,21 @@ If you found a technical bug on the website or have ideas for features we should
 - If you want to contribute but are unsure to start, we have [a "good first issue" label](https://github.com/Kritika30032002/Top_Secrets/contribute) which is applied to newcomer-friendly issues and pick something you like!
 - Want to fix a bug or implement an agreed-upon feature? Great, jump to the [local setup instructions](#project-setup)!
 
+---
+
+### 👀 Our Contributors
+
+- We extend our heartfelt gratitude for your invaluable contribution to our project! Your efforts play a pivotal role in elevating this project to greater heights.
+- Make sure you show some love by giving ⭐ to our repository.
+
+<div align="center">
+  <a href="https://github.com/Kritika30032002/Top_Secrets/">
+    <img src="https://contrib.rocks/image?repo=Kritika30032002/Top_Secrets&&max=1000" />
+  </a>
+</div>
+
+---
+
 ## 💪 Thanks to all Contributors
 
 Thanks a lot for spending your time helping Top_Secrets to grow. Thanks a lot! Keep rocking 🍻
