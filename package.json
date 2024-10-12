@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
@@ -20,7 +21,7 @@
     "mongoose": "^6.12.7",
     "mongoose-encryption": "^2.1.2",
     "mongoose-findorcreate": "^3.0.0",
-    "nodemon": "^3.0.2",
+    "nodemon": "^3.1.7",
     "passport": "^0.6.0",
     "passport-facebook": "^3.0.0",
     "passport-google-oauth20": "^2.0.0",
