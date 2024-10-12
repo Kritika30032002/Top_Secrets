@@ -10,7 +10,7 @@ const findOrCreate = require("mongoose-findorcreate");
 const LocalStrategy = require("passport-local").Strategy;
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const FacebookStrategy = require("passport-facebook").Strategy;
-
+// const axios = require("axios");
 const app = express();
 
 app.use(express.static("public"));
@@ -295,6 +295,82 @@ app.post('/api/votes', async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 });
+
+// DELETE /api/delete-secret
+app.post('/api/delete-secret', async (req, res) => {
+  try {
+    // Check if the user is authenticated
+    if (!req.isAuthenticated() || !req.user) {
+      return res.status(401).json({ message: 'User is not authenticated.' });
+    }
+    const { index } = req.body;
+    const user = await User.findById(req.user.id); // Assuming user is logged in
+
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    if (typeof index === 'number' && index >= 0 && index < user.secret.length) {
+      // Remove the secret based on index
+      user.secret.splice(index, 1);
+      await user.save();
+      return res.status(200).json({ message: 'Secret deleted successfully.' });
+    } else {
+      return res.status(400).json({ message: 'Invalid index provided.' });
+    }
+  } catch (error) {
+    console.error('Error deleting secret:', error);
+    return res.status(500).json({ message: 'Internal server error.' });
+  }
+});
+
+
+// POST /api/save-update-secret
+app.post('/api/save-update-secret', async (req, res) => {
+  try {
+    console.log('User Authenticated:', req.isAuthenticated()); // Check if user is authenticated
+    console.log('User ID:', req.user ? req.user.id : 'No user'); // Check user object
+    
+    if (!req.isAuthenticated()) {
+        return res.status(401).json({ message: 'User is not authenticated.' });
+    }
+
+      const { index, content } = req.body;
+
+      // Find user using req.user.id
+      const user = await User.findById(req.user.id);
+      if (!user) {
+          return res.status(404).json({ message: 'User not found.' });
+      }
+
+      // Validate index
+      if (typeof index !== 'number' || index < 0 || index >= user.secret.length) {
+          return res.status(400).json({ message: 'Invalid index provided.' });
+      }
+
+      // Validate content
+      if (typeof content !== 'string') {
+          return res.status(400).json({ message: 'Content must be a string.' });
+      }
+
+      // Access the secret safely
+      const secret = user.secret[index];
+      if (!secret || typeof secret.title === 'undefined') {
+          return res.status(400).json({ message: 'Secret not found or invalid structure.' });
+      }
+
+      // Update the title
+      secret.title = content;
+      await user.save();
+
+      res.status(200).json({ message: 'Secret updated successfully.' });
+  } catch (error) {
+      console.error('Error updating secret:', error.message || error);
+      res.status(500).json({ message: 'Internal server error.', error: error.message });
+  }
+});
+
+
 
 app.get('*', (req, res) => {
   res.status(404).render("404-page");

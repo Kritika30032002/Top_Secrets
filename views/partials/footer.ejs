@@ -147,4 +147,38 @@
   .mt-4 {
     margin-top: 1.5rem;
   }
+
+  @media (min-width: 768px) {
+    /* Adjust for larger screens */
+    .col-md-3 {
+      flex-basis: 24%;
+    }
+
+    .footer-title {
+      font-size: 1.8rem;
+    }
+
+    .footer-link {
+      font-size: 1.1rem;
+    }
+  }
+
+  /* Adjust text size for smaller devices */
+  @media (max-width: 576px) {
+    p.text-white{
+      font-size: 0.9rem;
+    }
+    .footer-title {
+      font-size: 1.4rem;
+    }
+
+    .footer-link {
+      font-size: 0.9rem;
+    }
+
+    .social-icon .icon {
+      width: 40px;
+      height: 40px;
+    }
+  }
 </style>
