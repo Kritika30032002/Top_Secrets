@@ -156,6 +156,19 @@ If you found a technical bug on the website or have ideas for features we should
 - If you want to contribute but are unsure to start, we have [a "good first issue" label](https://github.com/Kritika30032002/Top_Secrets/contribute) which is applied to newcomer-friendly issues and pick something you like!
 - Want to fix a bug or implement an agreed-upon feature? Great, jump to the [local setup instructions](#project-setup)!
 
+### 🗿 Ethical Code of Conduct
+
+- **Respect Issue Ownership and Problem Solving Capabilities**:
+Contributors must respect the ownership of issues raised by others. If someone has identified a problem and is capable of resolving it themselves, contributors should refrain from intervening unless explicitly requested for assistance. The goal is to foster autonomy and encourage developers to solve their own issues, contributing to their personal growth and the overall learning experience of the team.
+- **Focus on Unassigned Issues or New Problem Areas**:
+Contributors are encouraged to focus on issues that are either unassigned or have not been actively addressed. Before starting work on any issue, ensure that the issue has no active assignee. If an issue has been claimed, contributors should look for other opportunities or create new issues based on unaddressed problem areas.
+- **Avoid Conflict with Assigned Work**:
+In the spirit of collaboration, contributors should avoid duplicating work or conflicts by taking over issues that have already been assigned. Always verify the assignment status before starting work, and communicate clearly with the team to ensure smooth collaboration.
+- **Encourage Open Collaboration and Support**:
+While respecting issue ownership, contributors are encouraged to provide support and guidance if the person assigned to an issue requests help. Collaboration should be aimed at learning and building skills, rather than completing work for others.
+- **Maintaining Transparency and Accountability**:
+When contributing to issues, maintain transparency by regularly updating the status of the work being done. If you're unable to resolve an issue or need to relinquish it, communicate with the team so the issue can be reassigned. This ensures accountability and helps maintain the flow of contributions within the project.
+
 ## 💪 Thanks to all Contributors
 
 Thanks a lot for spending your time helping Top_Secrets to grow. Thanks a lot! Keep rocking 🍻
