@@ -28,14 +28,22 @@
                                 <div class="form-group">
                                     <label for="password">Password</label>
                                     <input
-                                        placeholder="minimum 8 length with at least 1 special ,upper ,lower and a number"
+                                      placeholder="Enter a strong password"
                                         type="password"
                                         class="form-control"
                                         name="password"
                                         minlength="8"
                                         id="user-password"
                                     />
-                                         </div>
+                                  </div>
+
+                                <!-- Added Show Password Checkbox -->
+                                <div class="form-group form-check">
+                                  <input type="checkbox" class="form-check-input" id="show-password-checkbox">
+                                  <p class="pass-text">Show Password</p>
+                                </div>
+                                <p class="pass-text">Password should be of minimum 8 characters with uppercase, lowercase letters and special symbols</p>
+                                                                  
                                 <button
                                     type="submit"
                                     class="button_all_black secondary"
@@ -84,6 +92,18 @@
       href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
     />
     <script>
+      // Show/Hide Password Toggle Functionality
+      const showPasswordCheckbox = document.getElementById("show-password-checkbox");
+      const passwordInput = document.getElementById("user-password");
+
+      showPasswordCheckbox.addEventListener("change", function () {
+          if (this.checked) {
+              passwordInput.type = "text"; // Show password
+          } else {
+              passwordInput.type = "password"; // Hide password
+          }
+      });
+
       // Initialize Toastify globally
       Toastify({
         position: "toast-top-left",
@@ -147,20 +167,21 @@
         }
         return true;
       }
+
+      // Validate user
       const userRegister = document.getElementById("user-register");
       userRegister.addEventListener("click", async (e) => {
         e.preventDefault();
 
-        // Validate Form
         const isFormValid = validateForm();
 
         if (isFormValid) {
           try {
-            // Send POST request only if the password is valid
             const formData = JSON.stringify({
               username: document.querySelector('input[name="username"]').value,
               password: document.querySelector('input[name="password"]').value,
             });
+            
             const response = await fetch("/register", {
               method: "POST",
               headers: {
@@ -169,41 +190,40 @@
               body: formData,
             });
 
+            const data = await response.json();
+
             if (response.ok) {
-              const data = await response.json();
               if (data.success) {
-                await Toastify({
+                Toastify({
                   text: data.message,
                   type: "success",
                 }).showToast();
-                window.location.href = "/secrets"; 
-                window.alert("Registration successful! Login to continue");
+                window.location.href = "/secrets";
               } else {
                 Toastify({
                   text: data.message,
                   type: "error",
                   style: {
-              background: "linear-gradient(to right, #4E575F,#343A40)",
-            },
+                    background: "linear-gradient(to right, #4E575F, #343A40)",
+                  },
                 }).showToast();
               }
             } else {
-              console.error("Server error:", response.statusText);
               Toastify({
-                text: "Error! Please try again later",
+                text: data.message,
                 type: "error",
                 style: {
-              background: "linear-gradient(to right, #4E575F,#343A40)",
-            },
+                  background: "linear-gradient(to right, #4E575F, #343A40)",
+                },
               }).showToast();
             }
           } catch (error) {
             Toastify({
-              text: "Error! Please try again later",
+              text: "An error occurred! Please try again.",
               type: "error",
               style: {
-              background: "linear-gradient(to right, #4E575F,#343A40)",
-            },
+                background: "linear-gradient(to right, #4E575F, #343A40)",
+              },
             }).showToast();
           }
         }
